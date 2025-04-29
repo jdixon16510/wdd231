@@ -1,0 +1,46 @@
+@media (min-width: 768px) {
+    #menu-button {
+      display: none;
+    }
+  
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    #nav-links {
+      display: flex;
+      flex-direction: row;
+    }
+  
+    #nav-links li a {
+      padding: 1rem 2rem;
+    }
+  
+    .top-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+    }
+  
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    #course-cards {
+        flex-direction: row; /* <-- now side-by-side on big screens */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .course-card {
+        flex: 1 1 150px; /* allow them to grow and shrink nicely */
+        max-width: 200px;
+        margin-bottom: 2rem;
+    }
+  }
+  

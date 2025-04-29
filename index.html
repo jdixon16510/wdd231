@@ -1,23 +1,89 @@
 <!DOCTYPE html>
-<html lang="en"></html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web Page</title>
-    <link rel="stylesheet" href="styles.css">
-      <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Web and Computer Programming</title>
+  <meta name="description" content="Responsive homepage for Web and Computer Programming Certificate coursework.">
+  <meta name="author" content="Joseph Dixon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/large.css">
+
+  <!-- JavaScript Files -->
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/date.js" defer></script>
+  <script src="scripts/course.js" defer></script>
 </head>
+
 <body>
-    <header>
-        <h1>Welcome to My Web Page</h1>
-    </header>
-    <main>
-        <section id="content">
-            <p>This is a simple web page.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 My Web Page</p>
-    </footer>
+
+<header>
+  <img src="images/profile.png" alt="Profile Picture" width = "75" height="75">
+  <span class="name">Joseph Dixon</span>
+</header>
+
+<nav>
+    <button id="menu-button" type="button" aria-label="Toggle Menu">☰ Menu</button>
+    <button id="close-button" type="button" aria-label="Close Menu" hidden>✖</button>
+
+  <ul id="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="#">Chamber</a></li>
+    <li><a href="#">Final</a></li>
+    <li><a href="https://github.com/jdixon16510" target="_blank">GitHub Profile</a></li>
+    <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+  </ul>
+</nav>
+
+<main>
+  <h1>Home</h1>
+
+  <div class="top-grid">
+    <section class="course-work">
+      <h2>Course Work</h2>
+      <ul>
+        <li>Learn HTML and CSS fundamentals</li>
+        <li>Responsive Web Design</li>
+        <li>Dynamic content with JavaScript</li>
+      </ul>
+    </section>
+
+    <section class="location">
+      <h2>Utah, United States</h2>
+      <figure>
+        <img src="images/Utah.webp" alt="Canyon Lands" width="300" height="300">
+        <figcaption>Canyonlands</figcaption>
+      </figure>
+    </section>
+  </div>
+
+  <section class="certificate">
+    <h2>Web and Computer Programming Certificate</h2>
+
+    <div id="course-controls">
+      <button id="all-courses">All</button>
+      <button id="cse-courses">CSE</button>
+      <button id="wdd-courses">WDD</button>
+    </div>
+
+    <div id="course-cards">
+      <!-- dynamically loaded course cards -->
+    </div>
+
+    <p id="total-credits">Total Credits: 0</p>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; <span id="year"></span> Joseph Dixon | Utah, United States</p>
+  <p id="lastModified"></p>
+</footer>
+
 </body>
 </html>
