@@ -5,46 +5,46 @@
     }
   
     nav {
-        display: flex;
-        justify-content: center; /* center the whole nav bar */
-        align-items: center;
-        background-color: var(--nav-bg);
-        padding: 1rem;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-    
-      #nav-links {
-        display: flex; /* flexbox for horizontal layout */
-        justify-content: center; /* center the links */
-        flex-direction: row;
-        gap: 2rem; 
-        max-height: none;
-        align-items: center;
-        list-style: none;
-        margin: 0;
-        padding: 0.5rem 0;
-        background-color: transparent;
-        overflow: visible;
-      }
-    
-      #nav-links li a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0.5rem 1rem;
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-        transition: background-color 0.3s;
-        border-radius: 5px; /* rounded corners for links */
-        font-size: 1.2rem; /* larger font size for desktop */
-      }
-    
-      #nav-links li a:hover,
-      #nav-links li a.active {
-        background-color: var(--accent-color); /* accent color on hover */
-      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--nav-bg);
+      padding: 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  
+    #nav-links {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      max-height: none;
+      overflow: visible;
+      list-style: none;
+      margin: 0;
+      padding: 0.5rem 0;
+      background-color: transparent;
+    }
+  
+    #nav-links li a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 1rem;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      border-radius: 5px;
+      font-size: 1.2rem;
+    }
+  
+    #nav-links li a:hover,
+    #nav-links li a.active {
+      background-color: var(--accent-color);
+    }
   
     .top-grid {
       display: grid;
@@ -57,18 +57,20 @@
       margin: 0 auto;
       padding: 2rem;
     }
-
+  
     #course-cards {
-        flex-direction: row; /* <-- now side-by-side on big screens */
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        justify-items: center;
+    }
+  
+    .course-card {
+      flex: 1 1 150px;
+      max-width: 200px;
+      margin-bottom: 2rem;
     }
 
-    .course-card {
-        flex: 1 1 150px; /* allow them to grow and shrink nicely */
-        max-width: 200px;
-        margin-bottom: 2rem;
-    }
-  }
+  
+  
+  
+  
   

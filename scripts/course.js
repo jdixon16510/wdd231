@@ -66,23 +66,24 @@ const courses = [
 function renderCourses(filteredCourses) {
    const courseCards = document.getElementById('course-cards');
    courseCards.innerHTML = '';
-
+ 
    filteredCourses.forEach(course => {
-       const card = document.createElement('div');
-       card.className = course.completed ? 'course-card completed' : 'course-card';
-       card.innerHTML = `
-           <h3>${course.subject} ${course.number} - ${course.title}</h3>
-           <p><strong>Credits:</strong> ${course.credits}</p>
-           <p><strong>Technologies:</strong> ${course.technology.join(', ')}</p>
-           <p>${course.description}</p>
-       `;
-       courseCards.appendChild(card);
+     const card = document.createElement('div');
+     card.className = course.completed ? 'course-card completed' : 'course-card';
+ 
+     card.innerHTML = `
+       ${course.completed ? '<div class="badge">✔ Completed</div>' : ''}
+       <h3>${course.subject} ${course.number} - ${course.title}</h3>
+     `;
+ 
+     courseCards.appendChild(card);
    });
-
-   // Update total credits dynamically
+ 
    const totalCredits = filteredCourses.reduce((sum, course) => sum + course.credits, 0);
    document.getElementById('total-credits').textContent = `Total Credits: ${totalCredits}`;
-}
+ }
+ 
+ 
 
 // Filtering controls
 document.getElementById('all-courses').addEventListener('click', () => {
@@ -110,4 +111,9 @@ function setActiveButton(buttonId) {
    buttons.forEach(button => button.classList.remove('active')); // remove active from all
    document.getElementById(buttonId).classList.add('active'); // add active to clicked
  }
+
+ // Initial load
+renderCourses(courses);
+setActiveButton('all-courses'); // ✅ highlight All button by default
+
  
