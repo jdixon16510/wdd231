@@ -1,22 +1,50 @@
 @media (min-width: 768px) {
-    #menu-button {
+    #menu-button,
+    #close-button {
       display: none;
     }
   
     nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    #nav-links {
-      display: flex;
-      flex-direction: row;
-    }
-  
-    #nav-links li a {
-      padding: 1rem 2rem;
-    }
+        display: flex;
+        justify-content: center; /* center the whole nav bar */
+        align-items: center;
+        background-color: var(--nav-bg);
+        padding: 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+    
+      #nav-links {
+        display: flex; /* flexbox for horizontal layout */
+        justify-content: center; /* center the links */
+        flex-direction: row;
+        gap: 2rem; 
+        max-height: none;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0.5rem 0;
+        background-color: transparent;
+        overflow: visible;
+      }
+    
+      #nav-links li a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem 1rem;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s;
+        border-radius: 5px; /* rounded corners for links */
+        font-size: 1.2rem; /* larger font size for desktop */
+      }
+    
+      #nav-links li a:hover,
+      #nav-links li a.active {
+        background-color: var(--accent-color); /* accent color on hover */
+      }
   
     .top-grid {
       display: grid;
