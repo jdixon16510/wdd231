@@ -275,3 +275,20 @@
    height: 24px;
    margin: 0 0.5rem;
  }
+
+ .skip-link {
+   position: absolute;
+   top: -40px;
+   left: 0;
+   background: var(--secondary-color);
+   color: var(--primary-color);
+   padding: 0.5rem 1rem;
+   z-index: 100;
+   text-decoration: none;
+   transition: top 0.3s ease;
+ }
+ 
+ .skip-link:focus {
+   top: 0;
+ }
+ 

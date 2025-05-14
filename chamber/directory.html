@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Directory | Loveland Chamber of Commerce | Joseph Dixon</title>
   <meta name="description" content="Loveland Chamber of Commerce Directory. This page showcases the members of the Chamber of Commerce." />
   <meta name="keywords" content="Chamber of Commerce, Directory, Members, Business" />
-  <meta name="author" content="Joseph Dixon">
+  <meta name="author" content="Joseph Dixon" />
 
-  <!-- FaceBook Properties -->
+  <!-- Open Graph / Facebook -->
   <meta property="og:title" content="Joseph Dixon | Directory Page | Chamber of Commerce" />
   <meta property="og:description" content="Loveland Chamber of Commerce Directory. This page showcases the members of the Chamber of Commerce." />
   <meta property="og:image" content="images/loveland-park.webp" />
@@ -17,91 +17,92 @@
   <meta property="og:site_name" content="Loveland Chamber of Commerce" />
   <meta property="og:locale" content="en_US" />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- CSS Files -->
-  <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/small.css">
-  <link rel="stylesheet" href="styles/large.css">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/normalize.css" />
+  <link rel="stylesheet" href="styles/small.css" />
+  <link rel="stylesheet" href="styles/large.css" />
 
   <!-- Favicon -->
-    <link rel="icon" href="chamber-favicon.ico" sizes="16x16">
+  <link rel="icon" href="chamber-favicon.ico" sizes="16x16" />
 
-  <!-- JavaScript Files -->
+  <!-- Scripts -->
   <script src="scripts/navigation.js" defer></script>
   <script src="scripts/date.js" defer></script>
   <script src="scripts/directory.js" defer></script>
 </head>
 
-<!--  -->
 <body>
-   <a href="#main" class="skip-link">Skip to main content</a>
-   
-   <header>
-      <div class="header-top">
-         <div class="logo-title">
-            <img src="images/loveland-chamber-of-commerce-logo-v2.png" alt="Loveland Chamber of Commerce Logo" class="logo" />
-            <h1>Loveland Chamber of Commerce</h1>
-         </div>
-      
+  <a href="#main" class="skip-link">Skip to main content</a>
 
-         <button id="menu-toggle" aria-label="Toggle Menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-         </button>
+  <header>
+    <div class="header-top">
+      <div class="logo-title">
+        <img src="images/loveland-chamber-of-commerce-logo-v2.png" alt="Loveland Chamber of Commerce logo" class="logo" />
+        <h1>Loveland Chamber of Commerce</h1>
       </div>
+      <button id="menu-toggle" aria-label="Toggle Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
 
-      <nav>
-         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="discover.html">Discover</a></li>
-            <li><a href="directory.html" class="active">Directory</a></li>
-            <li><a href="join.html">Join</a></li>
-         </ul>
-      </nav>
-       
-   </header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="directory.html" class="active">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
 
-   <section class="hero">
-      <img src="images/lake-loveland.webp" alt="Scenic view of Lake Loveland" />
-      <button class="cta">Keynote Tickets</button>
-   </section>
+  <section class="hero">
+    <img src="images/lake-loveland.webp" alt="Scenic view of Lake Loveland" />
+    <button class="cta">Keynote Tickets</button>
+  </section>
 
-   <main>
-      <h2>Our Members</h2>
-      <p>Welcome to the business directory. Here you can find information about our members.</p>
-      
-      <!-- Directory content will go here -->
-      <div class="view-toggle">
-         <button id="grid">Grid View</button>
-         <button id="list">List View</button>
-      </div>
+  <main id="main">
+    <h2>Our Members</h2>
+    <p>Welcome to the business directory. Here you can find information about our members.</p>
 
-      <section id="directory" class="grid cards"></section>
-   </main>
-   <footer>
-      <div>
-         <address>
-            5400 Stone Creek Circle<br>
-            Suite 200<br>
-            Loveland, CO 80538<br>
-            <a href="tel:+19706676311">970-667-6311</a>
-          </address>
-       </div>
-       <div class="social">
-         <a href="#"><img src="images/youtube-icon.png" alt="YouTube"></a>
-         <a href="#"><img src="images/twitter-icon.png" alt="Twitter"></a>
-         <a href="#"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
-       </div>
-       <div class="footer-meta">
-         <p>WDD231 Class Project<br>Joseph Dixon<br>&copy; <span id="year"></span> Loveland Chamber of Commerce<br><span id="lastModified"></span></p>
-       </div>
-      
-   </footer>
+    <div class="view-toggle">
+      <button id="grid">Grid View</button>
+      <button id="list">List View</button>
+    </div>
+
+    <section id="directory" class="grid cards"></section>
+  </main>
+
+  <footer>
+    <div>
+      <address>
+        5400 Stone Creek Circle<br />
+        Suite 200<br />
+        Loveland, CO 80538<br />
+        <a href="tel:+19706676311">970-667-6311</a>
+      </address>
+    </div>
+
+    <div class="social">
+      <a href="#"><img src="images/youtube-icon.png" alt="YouTube" /></a>
+      <a href="#"><img src="images/twitter-icon.png" alt="Twitter" /></a>
+      <a href="#"><img src="images/linkedin-icon.png" alt="LinkedIn" /></a>
+    </div>
+
+    <div class="footer-meta">
+      <p>
+        WDD231 Class Project<br />
+        Joseph Dixon<br />
+        &copy; <span id="year"></span> Loveland Chamber of Commerce<br />
+        <span id="lastModified"></span>
+      </p>
+    </div>
+  </footer>
 </body>
 </html>

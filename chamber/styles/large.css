@@ -1,3 +1,4 @@
+
 @media (min-width: 768px) {
    header {
      flex-direction: row;
@@ -5,13 +6,37 @@
      padding: 1rem 2rem;
    }
  
+   .hero {
+     position: relative;
+   }
+ 
    nav {
-     display: flex !important;
+     position: absolute;
+     top: calc(100% + 1rem); /* below header area, inside hero */
+     right: 2rem;
+     background-color: var(--secondary-color);
+     border-radius: 4px;
+     padding: 0.5rem 1rem;
+     z-index: 10;
+     display: flex;
+   }
+ 
+   nav ul {
+     display: flex;
      flex-direction: row;
      gap: 2rem;
+     margin: 0;
+     padding: 0;
+     list-style: none;
+   }
+ 
+   nav li {
+     margin: 0;
    }
  
    nav a {
+     text-decoration: none;
+     color: var(--primary-color);
      transition: background-color 0.3s ease, color 0.3s ease;
    }
  
@@ -23,10 +48,6 @@
  
    #menu-toggle {
      display: none;
-   }
- 
-   .hero {
-     position: relative;
    }
  
    .cta {
@@ -96,3 +117,4 @@
      margin: 0 0.5rem;
    }
  }
+ 
