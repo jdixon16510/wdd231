@@ -24,6 +24,7 @@
    padding: 1rem;
  }
  
+ /* Typography & Base Styles */
  body {
    font-family: 'Roboto', sans-serif;
    margin: 0;
@@ -96,7 +97,6 @@
    align-items: flex-end;
    background-color: var(--secondary-color);
    padding: 0.5rem 1rem;
-   margin: 0;
    position: absolute;
    right: 1rem;
    top: 100%;
@@ -132,7 +132,7 @@
    border-radius: 4px;
  }
  
- /* Hero */
+ /* Hero Section */
  .hero {
    position: relative;
    text-align: center;
@@ -143,6 +143,7 @@
    height: auto;
  }
  
+ /* Buttons and CTA */
  .cta,
  button {
    background-color: var(--cta-bg);
@@ -168,7 +169,7 @@
    transform: scale(1.05);
  }
  
- /* Grid view */
+ /* Grid View */
  .cards.grid {
    display: grid;
    grid-template-columns: 1fr;
@@ -223,7 +224,7 @@
    text-decoration: underline;
  }
  
- /* List view */
+ /* List View */
  .cards.list section {
    display: grid;
    grid-template-columns: 1fr 1fr 1fr;
@@ -275,7 +276,8 @@
    height: 24px;
    margin: 0 0.5rem;
  }
-
+ 
+ /* Accessibility */
  .skip-link {
    position: absolute;
    top: -40px;
