@@ -293,4 +293,10 @@
  .skip-link:focus {
    top: 0;
  }
+
  
+ @media (max-width: 767px) {
+   .view-toggle {
+     display: none;
+   }
+ }
