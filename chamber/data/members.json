@@ -1,0 +1,19 @@
+[
+   {
+     "name": "ABC Plumbing",
+     "address": "123 Main St, Loveland, CO",
+     "phone": "555-1234",
+     "website": "http://abcplumbing.com",
+     "image": "abc.png",
+     "membership": 1
+   },
+   {
+     "name": "Golden Bakery",
+     "address": "456 Elm St, Loveland, CO",
+     "phone": "555-5678",
+     "website": "http://goldenbakery.com",
+     "image": "bakery.png",
+     "membership": 3
+   }
+ ]
+ 
