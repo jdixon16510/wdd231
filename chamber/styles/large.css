@@ -4,6 +4,10 @@
      justify-content: space-between;
      padding: 1rem 2rem;
    }
+
+   .page-title {
+      font-size: 2.2rem;
+    }
  
    nav {
      position: absolute;
@@ -66,7 +70,7 @@
    }
  
    .cards.grid {
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));      
+      grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));      
     }    
      
    .cards.list section {

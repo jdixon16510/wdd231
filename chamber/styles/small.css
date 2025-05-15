@@ -53,6 +53,28 @@
  .logo {
    height: 50px;
  }
+
+ .visually-hidden {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   margin: -1px;
+   padding: 0;
+   border: 0;
+   clip: rect(0 0 0 0);
+   overflow: hidden;
+   white-space: nowrap;
+ }
+
+ .page-title {
+   font-size: 1.8rem;
+   font-weight: 700;
+   color: var(--primary-color);
+   margin: 0;
+   line-height: 1.2;
+ }
+ 
+ 
  
  /* Hamburger Menu */
  #menu-toggle {
@@ -198,8 +220,8 @@
    transform: scale(1.02);
  }
  .cards.grid section img {
-   /* width: 80px;
-   height: auto; */
+   width: 80px;
+   height: auto;
    object-fit: contain;
  }
  .cards.grid .card-content {
