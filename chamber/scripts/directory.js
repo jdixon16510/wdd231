@@ -102,3 +102,4 @@ function renderTableView(members) {
 }
 
 fetchMembers();
+
