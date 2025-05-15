@@ -34,6 +34,20 @@ async function fetchMembers() {
   }
 }
 
+function getMembershipLevel(level) {
+   switch (level) {
+     case 1:
+       return "Member";
+     case 2:
+       return "Silver";
+     case 3:
+       return "Gold";
+     default:
+       return "Unknown";
+   }
+ }
+ 
+
 function renderGridView(members) {
   directoryContainer.innerHTML = "";
   directoryContainer.className = "cards grid";
@@ -41,12 +55,13 @@ function renderGridView(members) {
   members.forEach((member) => {
     const section = document.createElement("section");
     section.innerHTML = `
-      <img src="images/${member.image}" alt="${member.name} logo" />
+      <img src="images/logos/${member.image}" alt="${member.name} logo" />
       <div class="card-content">
         <h3>${member.name}</h3>
-        <p><strong>Email:</strong> ${member.email || "N/A"}</p>
-        <p><strong>Phone:</strong> ${member.phone}</p>
+        <p><strong>Email:</strong> ✉️ <a href="mailto:${member.email}">${member.email || "N/A"}</a></p>
+        <p><strong>Phone:</strong> <a href="tel:${member.phone}">${member.phone}</a></p>
         <p><strong>URL:</strong> <a href="${member.website}" target="_blank">${member.website}</a></p>
+        <p><strong>Membership:</strong> ${getMembershipLevel(member.membership)}</p>
       </div>
     `;
     directoryContainer.appendChild(section);
@@ -59,11 +74,12 @@ function renderTableView(members) {
     <table class="directory-table">
       <thead>
         <tr>
-          <th>Logo</th>
-          <th>Name</th>
+          <th></th>
+          <th>Company</th>
           <th>Email</th>
           <th>Phone</th>
-          <th>URL</th>
+          <th>Web Site</th>
+          <th>Membership</th>
         </tr>
       </thead>
       <tbody>
@@ -71,11 +87,12 @@ function renderTableView(members) {
           .map(
             (member) => `
           <tr>
-            <td><img src="images/${member.image}" alt="${member.name} logo" /></td>
+            <td><img src="images//logos/${member.image}" alt="${member.name} logo" /></td>
             <td><strong>${member.name}</strong></td>
-            <td>${member.email || "N/A"}</td>
-            <td>${member.phone}</td>
+            <td>✉️ <a href="mailto:${member.email}">${member.email || "N/A"}</a></td>                        
+            <td>${member.phone ? `<a href="tel:${member.phone}">${member.phone}</a>` : "N/A"}</td>
             <td><a href="${member.website}" target="_blank">${member.website}</a></td>
+            <td>${getMembershipLevel(member.membership)}</td>
           </tr>`
           )
           .join("")}

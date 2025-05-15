@@ -1,19 +1,73 @@
 [
    {
-     "name": "ABC Plumbing",
-     "address": "123 Main St, Loveland, CO",
-     "phone": "555-1234",
-     "website": "http://abcplumbing.com",
-     "image": "abc.png",
-     "membership": 1
+      "name": "Stan's Auto Service, Inc.",
+      "address": "1019 South Lincoln Ave. Loveland CO 80537",
+      "phone": "(970) 667-6853",
+      "website": "stansautoloveland.com",
+      "image": "stansauto.webp",
+      "membership": 1,
+      "industry": "Automotive Repair / Service",
+      "description": "Complete auto, LD &HD truck service & towing. includes RV drivetrain repair, tires, diesels & semi tractor and trailers"
    },
    {
-     "name": "Golden Bakery",
-     "address": "456 Elm St, Loveland, CO",
-     "phone": "555-5678",
-     "website": "http://goldenbakery.com",
-     "image": "bakery.png",
-     "membership": 3
+      "name": "PNC Bank",
+      "address": "5275 McWhinney Blvd Loveland CO 80537",
+      "phone": "(970) 622-8080",
+      "website": "pnc.com",
+      "image": "pnc-logo-rev.svg",
+      "membership": 3,
+      "industry": "Banks",
+      "description": "We are proud of our longstanding history of supporting not only our customers but also our communities, employees and shareholders."
+   },
+   {
+      "name": "LLT Fun Center",
+      "address": "401 Denver Ave. Loveland CO 80537",
+      "phone": "(970) 663-9999",
+      "website": "laserfuncenter.com",
+      "image": "llt.png",
+      "membership": 1,
+      "industry": "Entertainment",
+      "description": "laughter, excitement, and unforgettable memories."
+   },
+   {
+      "name": "Haynie & Company CPAs",
+      "address": "200 E. 7th Street, STE 300 Loveland CO 80537",
+      "phone": "(970) 667-5316",
+      "website": "HaynieCPAs.com",
+      "image": "haynie.png",
+      "membership": 3,
+      "industry": "Accountants / Certified Public",
+      "description": "Haynie & Company is a growing, innovative full-service CPA firm. We offer a broad range of services including: audit, tax, accounting, consulting and management advisory services."
+   },
+   {
+      "name": "IT Colorado",
+      "address": "1817 W. 12th St. Loveland CO 80537",
+      "phone": "(970) 497-3979",
+      "website": "itcolorado.com/",
+      "image": "itc-logo.webp",
+      "membership": 2,
+      "industry": "Computer / Information Technology",
+      "description": "Northern Colorado’s Premier Business Cybersecurity"
+   },
+   {
+      "name": "Family Care Center",
+      "address": "1880 Fall River Drive Ste 250 Loveland CO 80538",
+      "phone": "(888) 374-5066",
+      "website": "fccwellbeing.com/",
+      "image": "fcc-logo-new.svg",
+      "membership": 3,
+      "industry": "Health Care Services",
+      "description": "Partner With Family Care Center For All of Your Mental Health Needs"
+   },
+   {
+      "name": "Colorado Time Systems, Inc.",
+      "address": "1551 E.11th Street Loveland CO 80537",
+      "phone": "(970) 667-1000",
+      "website": "coloradotime.com/",
+      "image": "playcore-logo.webp",
+      "membership": 2,
+      "industry": "Manufacturers / Processors",
+      "description": "Colorado Time Systems (CTS) provides premier athletic facilities across the world with platinum quality timing, scoring and display systems."
    }
  ]
  
