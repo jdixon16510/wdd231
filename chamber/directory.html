@@ -20,7 +20,12 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Preload font stylesheet -->
+   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+   <noscript>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:wght@400;700&display=swap">
+   </noscript>
+
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="styles/normalize.css" />
@@ -42,7 +47,7 @@
   <header>
     <div class="header-top">
       <div class="logo-title">
-        <img src="images/loveland-chamber-of-commerce-logo-v2.png" alt="Loveland Chamber of Commerce logo" class="logo" />
+        <img src="images/loveland-chamber-of-commerce-logo-v2.webp" alt="Loveland Chamber of Commerce logo" class="logo" />
         <h1>Loveland Chamber of Commerce</h1>
       </div>
       <button id="menu-toggle" aria-label="Toggle Menu">
@@ -63,7 +68,8 @@
   </header>
 
   <section class="hero">
-    <img src="images/lake-loveland.webp" alt="Scenic view of Lake Loveland" />
+   <img src="images/lake-loveland.webp" alt="Scenic view of Lake Loveland" width="1600" height="600" />
+
     <button class="cta">Keynote Tickets</button>
   </section>
 
@@ -91,9 +97,9 @@
     </div>
 
     <div class="social">
-      <a href="#"><img src="images/youtube.png" alt="YouTube" /></a>
-      <a href="#"><img src="images/twitter_x.png" alt="Twitter" /></a>
-      <a href="#"><img src="images/linkedin.png" alt="LinkedIn" /></a>
+      <a href="#"><img src="images/youtube.webp" alt="YouTube" width="24" height="24" /></a>
+      <a href="#"><img src="images/twitter_x.webp" alt="Twitter" width="24" height="24" /></a>
+      <a href="#"><img src="images/linkedin.webp" alt="LinkedIn" width="24" height="24" /></a>
     </div>
 
     <div class="footer-meta">

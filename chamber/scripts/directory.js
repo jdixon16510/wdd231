@@ -55,7 +55,7 @@ function renderGridView(members) {
   members.forEach((member) => {
     const section = document.createElement("section");
     section.innerHTML = `
-      <img src="images/logos/${member.image}" alt="${member.name} logo" />
+      <img src="images/logos/${member.image}" alt="${member.name} logo" width="100" height="60" />
       <div class="card-content">
         <h3>${member.name}</h3>
         <p><strong>Email:</strong> ✉️ <a href="mailto:${member.email}">${member.email || "N/A"}</a></p>
@@ -87,7 +87,7 @@ function renderTableView(members) {
           .map(
             (member) => `
           <tr>
-            <td><img src="images//logos/${member.image}" alt="${member.name} logo" /></td>
+            <td><img src="images//logos/${member.image}" alt="${member.name} logo" width="100" height="60" /></td>
             <td><strong>${member.name}</strong></td>
             <td>✉️ <a href="mailto:${member.email}">${member.email || "N/A"}</a></td>                        
             <td>${member.phone ? `<a href="tel:${member.phone}">${member.phone}</a>` : "N/A"}</td>
