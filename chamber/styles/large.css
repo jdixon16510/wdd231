@@ -5,10 +5,6 @@
      padding: 1rem 2rem;
    }
  
-   .hero {
-     position: relative;
-   }
- 
    nav {
      position: absolute;
      top: 0;
@@ -61,13 +57,13 @@
    .view-toggle {
      text-align: right;
      margin-bottom: 1rem;
+     display: block;
    }
  
    .cards.grid {
-     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-     gap: 1.5rem;
-   }
- 
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));      
+    }    
+     
    .cards.list section {
      display: flex;
      flex-direction: row;
@@ -80,49 +76,6 @@
      height: auto;
      margin-right: 1rem;
    }
-
-   @media (min-width: 768px) {
-      /* ... other styles ... */
-    
-      .directory-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 2rem;
-      }
-    
-      .directory-table thead {
-        background-color: var(--secondary-color);
-        color: var(--primary-color);
-        text-align: left;
-      }
-    
-      .directory-table th,
-      .directory-table td {
-        padding: 1rem;
-        border-bottom: 1px solid #ccc;
-        vertical-align: middle;
-      }
-    
-      .directory-table tbody tr:nth-child(even) {
-        background-color: #f0fafa;
-      }
-    
-      .directory-table img {
-        max-width: 60px;
-        height: auto;
-        object-fit: contain;
-      }
-    
-      .directory-table a {
-        color: var(--accent-color);
-        text-decoration: none;
-      }
-    
-      .directory-table a:hover {
-        text-decoration: underline;
-      }
-    }
-    
  
    button:hover {
      background-color: var(--primary-color);
@@ -153,6 +106,44 @@
    footer .social img {
      height: 24px;
      margin: 0 0.5rem;
+   }
+ 
+   .directory-table {
+     width: 100%;
+     border-collapse: collapse;
+     margin-bottom: 2rem;
+   }
+ 
+   .directory-table thead {
+     background-color: var(--secondary-color);
+     color: var(--primary-color);
+     text-align: left;
+   }
+ 
+   .directory-table th,
+   .directory-table td {
+     padding: 1rem;
+     border-bottom: 1px solid #ccc;
+     vertical-align: middle;
+   }
+ 
+   .directory-table tbody tr:nth-child(even) {
+     background-color: #f0fafa;
+   }
+ 
+   .directory-table img {
+     max-width: 60px;
+     height: auto;
+     object-fit: contain;
+   }
+ 
+   .directory-table a {
+     color: var(--accent-color);
+     text-decoration: none;
+   }
+ 
+   .directory-table a:hover {
+     text-decoration: underline;
    }
  }
  

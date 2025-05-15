@@ -22,9 +22,9 @@
  .cards.list,
  footer {
    padding: 1rem;
+   box-sizing: border-box;
  }
  
- /* Typography & Base Styles */
  body {
    font-family: 'Roboto', sans-serif;
    margin: 0;
@@ -64,12 +64,15 @@
    display: flex;
    flex-direction: column;
    justify-content: center;
+   align-items: center;
    gap: 5px;
    background: none;
    border: none;
    color: var(--primary-color);
    cursor: pointer;
-   padding: 0.5rem;
+   padding: 1rem;
+   min-width: 44px;
+   min-height: 44px;
    z-index: 1001;
  }
  
@@ -104,28 +107,27 @@
    border-radius: 4px;
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
  }
- 
  nav.show {
    display: flex;
  }
- 
  nav ul {
    padding: 0;
    margin: 0;
  }
- 
  nav li {
    list-style: none;
-   margin: 0.25rem 0;
+   margin: 0.5rem 0;
  }
- 
  nav a {
+   display: block;
+   padding: 1rem 1.5rem;
+   font-size: 1.1rem;
    text-decoration: none;
    color: var(--primary-color);
-   padding: 0.5rem;
    transition: background-color 0.3s ease, color 0.3s ease;
+   border-radius: 6px;
+   min-height: 44px; /* Minimum recommended touch height */
  }
- 
  nav a:hover {
    background-color: var(--accent-color);
    color: #fff;
@@ -137,13 +139,12 @@
    position: relative;
    text-align: center;
  }
- 
  .hero img {
    width: 100%;
    height: auto;
  }
  
- /* Buttons and CTA */
+ /* Buttons */
  .cta,
  button {
    background-color: var(--cta-bg);
@@ -155,39 +156,37 @@
    font-size: 1rem;
    transition: background-color 0.3s ease, transform 0.2s ease;
  }
- 
  .cta {
    position: absolute;
    bottom: 1rem;
    right: 1rem;
    font-weight: bold;
  }
- 
  button:hover {
    background-color: var(--primary-color);
    color: #fff;
    transform: scale(1.05);
  }
  
- /* Grid View */
+ /* Grid View (business card layout) */
  .cards {
    max-width: 100%;
    width: 100%;
+   margin: 0 auto;
    padding: 1rem;
    box-sizing: border-box;
  }
- 
- 
-
  .cards.grid {
    display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+   grid-template-columns: 1fr; /* single column by default */
    gap: 1.5rem;
-   justify-content: start;
+   justify-content: center;
    align-items: stretch;
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 1rem;
+   box-sizing: border-box;
  }
- 
- 
  .cards.grid section {
    background-color: var(--bg-color);
    border-radius: 8px;
@@ -200,44 +199,36 @@
    width: 100%;
    box-sizing: border-box;
  }
- 
- 
  .cards.grid section:hover {
    transform: scale(1.02);
  }
- 
  .cards.grid section img {
    width: 80px;
    height: auto;
    object-fit: contain;
  }
- 
  .cards.grid .card-content {
    flex: 1;
    word-wrap: break-word;
  }
- 
  .cards.grid .card-content h3 {
    margin: 0 0 0.5rem 0;
    font-size: 1.2rem;
    color: var(--primary-color);
  }
- 
  .cards.grid .card-content p {
    margin: 0.25rem 0;
    font-size: 0.95rem;
  }
- 
  .cards.grid .card-content a {
    color: var(--accent-color);
    text-decoration: none;
  }
- 
  .cards.grid .card-content a:hover {
    text-decoration: underline;
  }
  
- /* List View */
+ /* List View (stacked style on small screens) */
  .cards.list section {
    display: grid;
    grid-template-columns: 1fr 1fr 1fr;
@@ -248,27 +239,22 @@
    padding: 0.75rem 1rem;
    text-align: left;
  }
- 
  .cards.list section:nth-child(even) {
    background-color: #e8f5f8;
  }
- 
  .cards.list section img {
    display: none;
  }
- 
  .cards.list section h3 {
    font-size: 1rem;
    margin: 0;
  }
- 
  .cards.list section p,
  .cards.list section a {
    margin: 0;
    font-size: 0.9rem;
    color: var(--text-color);
  }
- 
  .cards.list section a {
    color: var(--accent-color);
    text-decoration: none;
@@ -280,11 +266,9 @@
    text-align: center;
    color: var(--bg-color);
  }
- 
  footer .social {
    margin: 1rem 0;
  }
- 
  footer .social img {
    height: 24px;
    margin: 0 0.5rem;
@@ -302,21 +286,21 @@
    text-decoration: none;
    transition: top 0.3s ease;
  }
- 
  .skip-link:focus {
    top: 0;
  }
-
+ 
  .icon {
    width: 1em;
    height: 1em;
    vertical-align: middle;
    margin-right: 0.3em;
  }
-
  
+ /* Hide view buttons on small screens */
  @media (max-width: 767px) {
    .view-toggle {
      display: none;
    }
  }
+ 
