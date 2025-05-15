@@ -1,18 +1,13 @@
 :root {
-   --alice-blue: #dcedff;
-   --powder-blue: #94b0da;
-   --cool-gray: #8f91a2;
-   --davys-gray: #505a5b;
-   --outer-space: #343f3e;
- 
-   --primary-color: var(--outer-space);
-   --secondary-color: var(--alice-blue);
-   --accent-color: var(--powder-blue);
-   --text-color: var(--davys-gray);
+   --primary-color: #2a2e33;
+   --secondary-color: #e3f2fd;
+   --accent-color: #0820f1;
+   --text-color: #404448;
    --bg-color: #ffffff;
-   --footer-bg: var(--cool-gray);
-   --cta-bg: var(--powder-blue);
+   --footer-bg: #5c5e70;
+   --cta-bg: #173fee;
  }
+ 
  
  /* Shared padding */
  body,
@@ -148,7 +143,7 @@
  .cta,
  button {
    background-color: var(--cta-bg);
-   color: var(--text-color);
+   color: white;
    border: none;
    padding: 0.5rem 1rem;
    border-radius: 4px;
@@ -262,9 +257,9 @@
  
  /* Footer */
  footer {
-   background-color: var(--footer-bg);
+   background-color: var(--secondary-color);
    text-align: center;
-   color: var(--bg-color);
+   color: var(--text-color);
  }
  footer .social {
    margin: 1rem 0;
