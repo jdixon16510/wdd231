@@ -112,11 +112,6 @@
      text-align: center;
    }
  
-   footer .social img {
-     height: 24px;
-     margin: 0 0.5rem;
-   }
- 
    .directory-table {
      width: 100%;
      border-collapse: collapse;
@@ -155,5 +150,5 @@
      text-decoration: underline;
    }
  }
- 
+
  

@@ -284,9 +284,11 @@
  footer .social {
    margin: 1rem 0;
  }
+
  footer .social img {
-   height: 24px;
+   height: 30px;
    margin: 0 0.5rem;
+   padding: 0.5rem;
  }
  
  /* Accessibility */
