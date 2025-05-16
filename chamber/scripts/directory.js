@@ -73,8 +73,7 @@ function renderTableView(members) {
   directoryContainer.innerHTML = `
     <table class="directory-table">
       <thead>
-        <tr>
-          <th></th>
+        <tr>          
           <th>Company</th>
           <th>Email</th>
           <th>Phone</th>
@@ -86,8 +85,7 @@ function renderTableView(members) {
         ${members
           .map(
             (member) => `
-          <tr>
-            <td><img src="images//logos/${member.image}" alt="${member.name} logo" loading="lazy width="80" height="auto" /></td>
+          <tr>            
             <td><strong>${member.name}</strong></td>
             <td>✉️ <a href="mailto:${member.email}">${member.email || "N/A"}</a></td>                        
             <td>${member.phone ? `<a href="tel:${member.phone}">${member.phone}</a>` : "N/A"}</td>
