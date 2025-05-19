@@ -354,14 +354,32 @@
    padding: 1rem;
    border-left: 5px solid var(--primary-color);
  }
- .events ul {
+ 
+ #events-list {
    list-style: none;
    padding-left: 0;
+   margin: 0;
  }
- .events li {
-   margin-bottom: 0.5rem;
+ 
+ #events-list li {
+   margin-bottom: 1.25rem;
+   padding-bottom: 0.75rem;
+   border-bottom: 1px solid #ddd;
    font-size: 1rem;
  }
+ 
+ .event-date {
+   font-weight: bold;
+   color: var(--primary-color);
+   margin-bottom: 0.25rem;
+ }
+ 
+ .event-details {
+   font-size: 0.95rem;
+   color: var(--text-color);
+   line-height: 1.4;
+ }
+ 
  
  /* Footer */
  footer {

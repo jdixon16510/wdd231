@@ -8,7 +8,11 @@ async function loadEvents() {
  
      data.events.forEach(event => {
        const li = document.createElement("li");
-       li.innerHTML = `<strong>${event.date}:</strong> ${event.title} – ${event.location}`;
+       li.innerHTML = `
+         <div class="event-date">${event.date}</div>
+         <div class="event-details">${event.title} – ${event.location}</div>
+      `;
+
        eventsList.appendChild(li);
      });
    } catch (error) {
