@@ -43,9 +43,7 @@
      display: inline-block;
    }
  
-   nav a:hover {
-     background-color: var(--accent-color);
-     color: #fff;
+   nav a:hover {     
      border-radius: 4px;
    }
  
