@@ -1,4 +1,4 @@
-// scripts/utils.js
+// scripts/utils.mjs
 
 export function getMembershipLevel(level) {
    switch (level) {
@@ -27,5 +27,20 @@ export function getMembershipLevel(level) {
      console.error("Error fetching members:", error);
      return [];
    }
+ }
+ 
+ export function createMemberCard(member) {
+   const section = document.createElement("section");
+   section.innerHTML = `
+     <img src="images/logos/${member.image}" alt="${member.name} logo" loading="lazy" width="80" height="auto" />
+     <div class="card-content">
+       <h3>${member.name}</h3>
+       <p><strong>Email:</strong> ✉️ <a href="mailto:${member.email}">${member.email || "N/A"}</a></p>
+       <p><strong>Phone:</strong> <a href="tel:${member.phone}">${member.phone}</a></p>
+       <p><strong>URL:</strong> <a href="${member.website}" target="_blank">${member.website}</a></p>
+       <p><strong>Membership:</strong> ${getMembershipLevel(member.membership)}</p>
+     </div>
+   `;
+   return section;
  }
  
