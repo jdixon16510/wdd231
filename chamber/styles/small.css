@@ -8,18 +8,11 @@
    --cta-bg: #173fee;
  }
  
- 
- /* Shared padding */
- body,
- main,
- header,
- .cards.grid,
- .cards.list,
- footer {
+ /* Base layout */
+ body, main, header, .cards.grid, .cards.list, footer {
    padding: 1rem;
    box-sizing: border-box;
  }
- 
  body {
    font-family: 'Roboto', sans-serif;
    margin: 0;
@@ -36,24 +29,27 @@
    align-items: center;
    position: relative;
  }
- 
  .header-top {
    width: 100%;
    display: flex;
    justify-content: space-between;
    align-items: center;
  }
- 
  .logo-title {
    display: flex;
    align-items: center;
    gap: 1rem;
  }
- 
  .logo {
    height: 50px;
  }
-
+ .page-title {
+   font-size: 1.8rem;
+   font-weight: 700;
+   color: var(--primary-color);
+   margin: 0;
+   line-height: 1.2;
+ }
  .visually-hidden {
    position: absolute;
    width: 1px;
@@ -65,16 +61,8 @@
    overflow: hidden;
    white-space: nowrap;
  }
-
- .page-title {
-   font-size: 1.8rem;
-   font-weight: 700;
-   color: var(--primary-color);
-   margin: 0;
-   line-height: 1.2;
- }
  
- /* Hamburger Menu */
+ /* Navigation */
  #menu-toggle {
    display: flex;
    flex-direction: column;
@@ -90,14 +78,12 @@
    min-height: 44px;
    z-index: 1001;
  }
- 
  #menu-toggle .bar {
    width: 25px;
    height: 3px;
    background-color: var(--primary-color);
-   transition: all 0.3s ease-in-out;
+   transition: transform 0.3s ease, opacity 0.3s ease;
  }
- 
  #menu-toggle.open .bar:nth-child(1) {
    transform: rotate(45deg) translate(5px, 5px);
  }
@@ -108,7 +94,6 @@
    transform: rotate(-45deg) translate(5px, -5px);
  }
  
- /* Nav */
  nav {
    display: none;
    flex-direction: column;
@@ -139,23 +124,19 @@
    font-size: 1.1rem;
    text-decoration: none;
    color: var(--primary-color);
-   transition: background-color 0.3s ease, color 0.3s ease;
    border-radius: 6px;
-   min-height: 44px; /* Minimum recommended touch height */
+   min-height: 44px;
  }
  nav a:hover {
    background-color: var(--accent-color);
    color: #fff;
-   border-radius: 4px;
  }
-
  nav a.active {
    font-weight: bold;
    border-bottom: 2px solid var(--accent-color);
  }
  
- 
- /* Hero Section */
+ /* Hero */
  .hero {
    position: relative;
    text-align: center;
@@ -164,61 +145,76 @@
    width: 100%;
    height: auto;
  }
- 
- /* Buttons */
- .cta,
- button {
+ .cta {
+   position: absolute;
+   bottom: 1rem;
+   right: 1rem;
    background-color: var(--cta-bg);
    color: white;
    border: none;
    padding: 0.5rem 1rem;
    border-radius: 4px;
-   cursor: pointer;
-   font-size: 1rem;
-   transition: background-color 0.3s ease, transform 0.2s ease;
- }
- .cta {
-   position: absolute;
-   bottom: 1rem;
-   right: 1rem;
    font-weight: bold;
+   font-size: 1rem;
+   cursor: pointer;
  }
  button:hover {
    background-color: var(--primary-color);
    color: #fff;
    transform: scale(1.05);
  }
+
+ .view-toggle {
+   display: flex;
+   justify-content: right;
+   align-items: center;
+   gap: 1rem;
+   margin: 1rem 0;
+ }
  
- /* Grid View (business card layout) */
+ .view-toggle button {
+   padding: 0.5rem 1.25rem;
+   font-size: 1rem;
+   font-weight: bold;
+   border-radius: 4px;
+   border: none;
+   background-color: var(--cta-bg);
+   color: white;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+ }
+ 
+ .view-toggle button:hover {
+   background-color: var(--primary-color);
+   transform: scale(1.05);
+ }
+ 
+ .view-toggle button.active {
+   background-color: var(--primary-color);
+ }
+ 
+ 
+ /* Cards: Directory + Spotlight */
  .cards {
-   max-width: 100%;
    width: 100%;
+   max-width: 100%;
    margin: 0 auto;
-   padding: 1rem;
-   box-sizing: border-box;
  }
  .cards.grid {
    display: grid;
-   grid-template-columns: 1fr; /* single column by default */
+   grid-template-columns: 1fr;
    gap: 1.5rem;
-   justify-content: center;
-   align-items: stretch;
    max-width: 1200px;
-   margin: 0 auto;
-   padding: 1rem;
-   box-sizing: border-box;
  }
  .cards.grid section {
+   position: relative;
    background-color: var(--bg-color);
    border-radius: 8px;
    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-   padding: 1rem 1.5rem;
-   transition: transform 0.2s ease-in-out;
+   padding: 2rem 1.5rem 1.5rem;
    display: flex;
    align-items: center;
    gap: 1.5rem;
-   width: 100%;
-   box-sizing: border-box;
  }
  .cards.grid section:hover {
    transform: scale(1.02);
@@ -228,28 +224,60 @@
    height: auto;
    object-fit: contain;
  }
- .cards.grid .card-content {
+ .card-content {
    flex: 1;
    word-wrap: break-word;
  }
- .cards.grid .card-content h3 {
+ .card-content h3 {
    margin: 0 0 0.5rem 0;
    font-size: 1.2rem;
    color: var(--primary-color);
  }
- .cards.grid .card-content p {
+ .card-content p {
    margin: 0.25rem 0;
    font-size: 0.95rem;
  }
- .cards.grid .card-content a {
+ .card-content a {
    color: var(--accent-color);
    text-decoration: none;
  }
- .cards.grid .card-content a:hover {
+ .card-content a:hover {
    text-decoration: underline;
  }
  
- /* List View (stacked style on small screens) */
+ /* Badge (shared and corner) */
+ .badge {
+   display: inline-block;
+   padding: 0.25rem 0.5rem;
+   font-size: 0.75rem;
+   font-weight: bold;
+   text-transform: uppercase;
+   border-radius: 4px;
+   position: absolute;
+   top: 0.5rem;
+   right: 0.5rem;
+   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+   z-index: 1;
+ }
+ .badge.gold {
+   background-color: gold;
+   color: var(--primary-color);
+   border: 1px solid var(--primary-color);
+ }
+ .badge.silver {
+   background-color: silver;
+   color: var(--primary-color);
+   border: 1px solid var(--primary-color);
+ }
+
+ .badge.gray {
+   background-color: white;
+   color: var(--primary-color);
+   border: 1px solid var(--primary-color);
+ }
+ 
+ 
+ /* List View (Directory) */
  .cards.list section {
    display: grid;
    grid-template-columns: 1fr 1fr 1fr;
@@ -262,9 +290,6 @@
  }
  .cards.list section:nth-child(even) {
    background-color: #e8f5f8;
- }
- .cards.list section img {
-   display: none;
  }
  .cards.list section h3 {
    font-size: 1rem;
@@ -280,34 +305,30 @@
    color: var(--accent-color);
    text-decoration: none;
  }
-
+ 
+ /* Info Sections (Weather, Events) */
  .info-grid {
    display: grid;
    grid-template-columns: 1fr;
    gap: 1rem;
    margin: 2rem 0;
  }
- 
  .info-grid > div {
    background-color: #f0f8ff;
    padding: 1rem;
    border-left: 5px solid var(--accent-color);
    border-radius: 8px;
- }  
-
- /* Weather section */
-.weather {
+ }
+ .weather {
    background-color: #f0f8ff;
    border-left: 5px solid var(--accent-color);
    padding: 1rem;
    margin-bottom: 2rem;
  }
- 
  .weather figure {
    margin: 1rem 0;
    text-align: center;
  }
- 
  .forecast {
    display: flex;
    justify-content: space-around;
@@ -315,7 +336,6 @@
    flex-wrap: wrap;
    margin-top: 1rem;
  }
- 
  .forecast-day {
    background-color: var(--secondary-color);
    border-radius: 6px;
@@ -323,65 +343,25 @@
    text-align: center;
    font-size: 0.95rem;
    min-width: 100px;
-   margin: 0.5rem 0;
  }
-
  .forecast-day img {
    width: 50px;
    height: auto;
  }
  
- /* Spotlights */
- .spotlights {
-   margin: 2rem 0;
- }
-
- .spotlight-grid {
-   display: grid;
-   grid-template-columns: 1fr;
-   gap: 1.5rem;   
- }
- 
- .spotlight-grid article {
-   background-color: #ffffff;
-   border-left: 4px solid var(--accent-color);
-   padding: 1rem;
-   border-radius: 8px;
-   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
- }
- 
- .spotlight-grid article img {
-   max-width: 100%;
-   height: auto;
-   margin-bottom: 0.5rem;
- }
- 
- .spotlight-grid a {
-   color: var(--accent-color);
-   text-decoration: none;
- }
- 
- .spotlight-grid a:hover {
-   text-decoration: underline;
- }
- 
- /* Events section */
  .events {
    background-color: #f5faff;
    padding: 1rem;
    border-left: 5px solid var(--primary-color);
  }
- 
  .events ul {
    list-style: none;
    padding-left: 0;
  }
- 
  .events li {
    margin-bottom: 0.5rem;
    font-size: 1rem;
  }
- 
  
  /* Footer */
  footer {
@@ -392,7 +372,6 @@
  footer .social {
    margin: 1rem 0;
  }
-
  footer .social img {
    height: 30px;
    margin: 0 0.5rem;
@@ -415,14 +394,7 @@
    top: 0;
  }
  
- .icon {
-   width: 1em;
-   height: 1em;
-   vertical-align: middle;
-   margin-right: 0.3em;
- }
- 
- /* Hide view buttons on small screens */
+ /* Hide view toggle on small screens */
  @media (max-width: 767px) {
    .view-toggle {
      display: none;

@@ -30,17 +30,27 @@ export function getMembershipLevel(level) {
  }
  
  export function createMemberCard(member) {
+   const badge = getMembershipLevel(member.membership);
+   const badgeColor =
+      badge === "Gold" ? "gold" :
+      badge === "Silver" ? "silver" :
+      badge === "Member" ? "gray" :
+      "";
+
+ 
    const section = document.createElement("section");
+   section.classList.add("card-wrapper");
    section.innerHTML = `
+     ${badgeColor ? `<span class="badge ${badgeColor.toLowerCase()}">${badge}</span>` : ""}
      <img src="images/logos/${member.image}" alt="${member.name} logo" loading="lazy" width="80" height="auto" />
      <div class="card-content">
        <h3>${member.name}</h3>
        <p><strong>Email:</strong> ✉️ <a href="mailto:${member.email}">${member.email || "N/A"}</a></p>
        <p><strong>Phone:</strong> <a href="tel:${member.phone}">${member.phone}</a></p>
        <p><strong>URL:</strong> <a href="${member.website}" target="_blank">${member.website}</a></p>
-       <p><strong>Membership:</strong> ${getMembershipLevel(member.membership)}</p>
      </div>
    `;
    return section;
  }
+ 
  

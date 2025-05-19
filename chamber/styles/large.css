@@ -4,10 +4,10 @@
      justify-content: space-between;
      padding: 1rem 2rem;
    }
-
+ 
    .page-title {
-      font-size: 2.2rem;
-    }
+     font-size: 2.2rem;
+   }
  
    nav {
      position: absolute;
@@ -40,7 +40,6 @@
      padding: 0.5rem 1rem;
      font-size: 1rem;
      line-height: 1.2;
-     min-height: auto;
      display: inline-block;
    }
  
@@ -61,18 +60,12 @@
  
    main {
      padding: 2rem;
-   }
- 
-   .view-toggle {
-     text-align: right;
-     margin-bottom: 1rem;
-     display: block;
-   }
+   }    
  
    .cards.grid {
-      grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));      
-    }    
-     
+     grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+   }
+ 
    .cards.list section {
      display: flex;
      flex-direction: row;
@@ -91,41 +84,35 @@
      color: #fff;
      transform: scale(1.05);
    }
-
+ 
    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin: 2rem auto;
-      max-width: 1200px;
-    }
-    
-    .spotlight-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-    
-
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 2rem;
+     margin: 2rem auto;
+     max-width: 1200px;
+   }
+ 
    .weather,
    .spotlights,
    .events {
-   max-width: 1200px;
-   margin: 0 auto 2rem auto;
+     max-width: 1200px;
+     margin: 0 auto 2rem auto;
    }
-
+ 
    .spotlight-grid {
-   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+     gap: 2rem;
    }
-
+ 
    .forecast {
-   justify-content: flex-start;
+     justify-content: flex-start;
    }
-
+ 
    .forecast-day {
-   font-size: 1rem;
+     font-size: 1rem;
    }
-
  
    footer {
      display: flex;
@@ -185,5 +172,4 @@
      text-decoration: underline;
    }
  }
-
  
