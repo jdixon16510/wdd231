@@ -1,7 +1,7 @@
 const apiKey = "20d7c303d7045bf62ea7b94225fb20b4";
 const lat = 40.40;
 const lon = -105.08;
-const units = "imperial"; // Fahrenheit
+const units = "imperial";
 
 async function getWeather() {
   const currentURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
@@ -20,9 +20,21 @@ async function getWeather() {
 
     // === CURRENT WEATHER ===
     document.getElementById("current-temp").textContent = `${currentData.main.temp.toFixed(1)} °F`;
-    document.getElementById("weather-icon").src = `https://openweathermap.org/img/wn/${currentData.weather[0].icon}@2x.png`;
-    document.getElementById("weather-icon").alt = currentData.weather[0].description;
-    document.getElementById("weather-desc").textContent = currentData.weather[0].description;
+
+    const weatherFigure = document.getElementById("weather-figure");
+    weatherFigure.innerHTML = "";
+
+    const iconImg = document.createElement("img");
+    iconImg.src = `https://openweathermap.org/img/wn/${currentData.weather[0].icon}@2x.png`;
+    iconImg.alt = currentData.weather[0].description;
+    iconImg.id = "weather-icon";
+
+    const figcaption = document.createElement("figcaption");
+    figcaption.id = "weather-desc";
+    figcaption.textContent = currentData.weather[0].description;
+
+    weatherFigure.appendChild(iconImg);
+    weatherFigure.appendChild(figcaption);
 
     // === SUNRISE & SUNSET ===
     const sunrise = new Date(currentData.sys.sunrise * 1000);
@@ -40,17 +52,16 @@ async function getWeather() {
     const forecastWrapper = document.getElementById("forecast");
     forecastWrapper.innerHTML = "";
 
-    // Try getting noon forecast, else fallback every 8th item
+    // Prefer noon forecasts; fallback every 8 steps
     let filtered = forecastData.list.filter(item => item.dt_txt.includes("12:00:00"));
     if (filtered.length < 3) {
-      filtered = forecastData.list.filter((_, i) => i % 8 === 4); // fallback
+      filtered = forecastData.list.filter((_, i) => i % 8 === 4);
     }
-    const forecastSlice = filtered.slice(0, 3);
 
     const forecastContainer = document.createElement("div");
     forecastContainer.classList.add("forecast");
 
-    forecastSlice.forEach(day => {
+    filtered.slice(0, 3).forEach(day => {
       const date = new Date(day.dt_txt);
       const dayName = date.toLocaleDateString("en-US", { weekday: "long" });
       const temp = day.main.temp.toFixed(1);
