@@ -91,6 +91,41 @@
      color: #fff;
      transform: scale(1.05);
    }
+
+   .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin: 2rem auto;
+      max-width: 1200px;
+    }
+    
+    .spotlight-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+
+   .weather,
+   .spotlights,
+   .events {
+   max-width: 1200px;
+   margin: 0 auto 2rem auto;
+   }
+
+   .spotlight-grid {
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   }
+
+   .forecast {
+   justify-content: flex-start;
+   }
+
+   .forecast-day {
+   font-size: 1rem;
+   }
+
  
    footer {
      display: flex;

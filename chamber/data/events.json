@@ -1,0 +1,20 @@
+{
+   "events": [
+     {
+       "date": "June 12",
+       "title": "Business Networking Breakfast",
+       "location": "Sunrise Café"
+     },
+     {
+       "date": "June 18",
+       "title": "Summer Fest",
+       "location": "Fairgrounds Park"
+     },
+     {
+       "date": "July 4",
+       "title": "Independence Day Parade & Fireworks",
+       "location": "Downtown Loveland"
+     }
+   ]
+ }
+ 

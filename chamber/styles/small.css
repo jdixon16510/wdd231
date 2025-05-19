@@ -280,6 +280,108 @@
    color: var(--accent-color);
    text-decoration: none;
  }
+
+ .info-grid {
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: 1rem;
+   margin: 2rem 0;
+ }
+ 
+ .info-grid > div {
+   background-color: #f0f8ff;
+   padding: 1rem;
+   border-left: 5px solid var(--accent-color);
+   border-radius: 8px;
+ }  
+
+ /* Weather section */
+.weather {
+   background-color: #f0f8ff;
+   border-left: 5px solid var(--accent-color);
+   padding: 1rem;
+   margin-bottom: 2rem;
+ }
+ 
+ .weather figure {
+   margin: 1rem 0;
+   text-align: center;
+ }
+ 
+ .forecast {
+   display: flex;
+   justify-content: space-around;
+   gap: 1rem;
+   flex-wrap: wrap;
+   margin-top: 1rem;
+ }
+ 
+ .forecast-day {
+   background-color: var(--secondary-color);
+   border-radius: 6px;
+   padding: 0.5rem 1rem;
+   text-align: center;
+   font-size: 0.95rem;
+   min-width: 100px;
+   margin: 0.5rem 0;
+ }
+
+ .forecast-day img {
+   width: 50px;
+   height: auto;
+ }
+ 
+ /* Spotlights */
+ .spotlights {
+   margin: 2rem 0;
+ }
+
+ .spotlight-grid {
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: 1.5rem;   
+ }
+ 
+ .spotlight-grid article {
+   background-color: #ffffff;
+   border-left: 4px solid var(--accent-color);
+   padding: 1rem;
+   border-radius: 8px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ }
+ 
+ .spotlight-grid article img {
+   max-width: 100%;
+   height: auto;
+   margin-bottom: 0.5rem;
+ }
+ 
+ .spotlight-grid a {
+   color: var(--accent-color);
+   text-decoration: none;
+ }
+ 
+ .spotlight-grid a:hover {
+   text-decoration: underline;
+ }
+ 
+ /* Events section */
+ .events {
+   background-color: #f5faff;
+   padding: 1rem;
+   border-left: 5px solid var(--primary-color);
+ }
+ 
+ .events ul {
+   list-style: none;
+   padding-left: 0;
+ }
+ 
+ .events li {
+   margin-bottom: 0.5rem;
+   font-size: 1rem;
+ }
+ 
  
  /* Footer */
  footer {
