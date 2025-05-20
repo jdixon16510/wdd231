@@ -2,7 +2,7 @@
 
 export function getMembershipLevel(level) {
    switch (level) {
-     case 1: return "Member";
+     case 1: return "Bronze";
      case 2: return "Silver";
      case 3: return "Gold";
      default: return "Unknown";
@@ -34,7 +34,7 @@ export function getMembershipLevel(level) {
    const badgeColor =
       badge === "Gold" ? "gold" :
       badge === "Silver" ? "silver" :
-      badge === "Member" ? "gray" :
+      badge === "Bronze" ? "bronze" :
       "";
 
  

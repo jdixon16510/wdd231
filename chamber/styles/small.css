@@ -270,8 +270,8 @@
    border: 1px solid var(--primary-color);
  }
 
- .badge.gray {
-   background-color: white;
+ .badge.bronze {
+   background-color: #f5c117;
    color: var(--primary-color);
    border: 1px solid var(--primary-color);
  }
