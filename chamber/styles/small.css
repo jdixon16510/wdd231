@@ -271,7 +271,7 @@
  }
 
  .badge.bronze {
-   background-color: #f5c117;
+   background-color: #f1c120;
    color: var(--primary-color);
    border: 1px solid var(--primary-color);
  }
@@ -315,14 +315,14 @@
  }
  .info-grid > div {
    background-color: #f0f8ff;
-   padding: 1rem;
-   border-left: 5px solid var(--accent-color);
+   padding: 1rem;   
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
    border-radius: 8px;
  }
  .weather {
-   background-color: #f0f8ff;
+   /* background-color: #f0f8ff;
    border-left: 5px solid var(--accent-color);
-   padding: 1rem;
+   padding: 1rem; */
    margin-bottom: 2rem;
  }
  .weather figure {
