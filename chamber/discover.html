@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loveland Chamber of Commerce</title>
+  <meta name="description" content="Loveland Chamber of Commerce Home Page. This page highlights upcoming events and showcases our gold and silver members" />
+  <meta name="keywords" content="Chamber of Commerce, Loveland, Weather, Events, Showcase" />
+  <meta name="author" content="Joseph Dixon" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Loveland Chamber of Commerce" />
+  <meta property="og:description" content="Loveland Chamber of Commerce Home Page. This page highlights upcoming events and showcases our gold and silver members" />
+  <meta property="og:image" content="https://jdixon16510.github.io/wdd231/chamber/images/loveland-park.webp" />
+  <meta property="og:url" content="https://jdixon16510.github.io/wdd231/chamber/index.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Loveland Chamber of Commerce" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Preload font stylesheet -->
+   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+   <noscript>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:wght@400;700&display=swap">
+   </noscript>
+
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/normalize.css" />
+  <link rel="stylesheet" href="styles/small.css" />
+  <link rel="stylesheet" href="styles/large.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.webp" sizes="16x16" />
+
+  <!-- Scripts -->
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/date.js" defer></script>
+  <script src="scripts/events.js" defer></script>
+   <script src="scripts/weather.js" defer></script>
+   <script type="module" src="scripts/spotlight.mjs"></script>
+
+  <!-- Preload hero image -->
+  <link rel="preload" as="image" href="images/front-range.webp">
+
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header>
+    <div class="header-top">
+      <div class="logo-title">
+         <img src="images/loveland-coc-logo.webp" alt="Loveland Chamber of Commerce logo" class="logo" />
+         <span class="page-title">Loveland Chamber of Commerce</span>
+      </div>
+      <button id="menu-toggle" aria-label="Toggle Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="hero">
+   <img src="images/front-range.webp" alt="Colorado Front Range Mountians" width="1600" height="600" />
+
+   <a href="join.html" class="cta">Join the Chamber</a>
+
+  </div>
+
+  <main id="main">
+   <h1>Welcome to the Loveland Chamber of Commerce</h1>
+   <p>Connecting businesses and the community.</p>     
+     
+   <section class="info-grid">
+      <!-- Events Section -->
+      <div class="events-box">
+        <h2>Current Events</h2>
+        <ul id="events-list"></ul>
+      </div>
+    
+      <!-- Weather Section -->
+      <div class="current-weather-box">
+         <h2>Current Weather</h2>
+         <div id="weather-container">
+           <p>The current temperature in Loveland is <span id="current-temp">--</span></p>
+           <figure id="weather-figure">             
+             <figcaption id="weather-desc">--</figcaption>
+           </figure>
+         </div>
+       </div>
+       
+    
+      <div class="forecast-box">
+        <h2>Weather Forecast</h2>
+        <div id="forecast"></div>
+      </div>
+    </section>
+    
+    <!-- Spotlights Section -->
+    <section class="spotlights">
+      <h2>Member Spotlights</h2>
+      <div class="cards grid spotlight-grid"></div>
+    </section>
+    
+  </main>
+
+  <footer>
+    <div>
+      <address>
+         <strong>Loveland Chamber of Commerce</strong><br />
+         5400 Stone Creek Circle<br />
+         Suite 200<br />
+         Loveland, CO 80538<br />
+         <a href="tel:+19706676311">970-667-6311</a>
+      </address>
+    </div>
+
+    <div class="social">
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener"><img src="images/youtube_icon.svg" alt="YouTube" width="24" height="24" /></a>
+      <a href="https://twitter.com/" target="_blank" rel="noopener"><img src="images/twitter_icon.svg" alt="Twitter" width="24" height="24" /></a>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener"><img src="images/linkedin_icon.svg" alt="LinkedIn" width="24" height="24" /></a>
+    </div>
+
+    <div class="footer-meta">
+      <p>
+        WDD231 Class Project<br />
+        Joseph Dixon<br />
+        &copy; <span id="year"></span> Loveland Chamber of Commerce<br />
+        <span id="lastModified"></span>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
+

@@ -169,5 +169,27 @@
    .directory-table a:hover {
      text-decoration: underline;
    }
+
+  .join-page .join-form {
+    margin: 0; /* override auto from small.css */
+    width: 100%; /* ensure it fills grid column */
+    max-width: unset; /* remove max-width */
+  }
+
+  .join-page .join-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 2rem;
+  }
+
+  .join-page #membership-cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
  }
+
  
