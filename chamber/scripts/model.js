@@ -3,26 +3,48 @@ document.addEventListener("DOMContentLoaded", () => {
   const modals = document.querySelectorAll(".modal");
   const closeButtons = document.querySelectorAll(".modal .close");
 
+  function openModal(modal) {
+    modal.classList.add("show");
+    document.body.style.overflow = "hidden"; // Prevent background scroll
+  }
+
+  function closeModal(modal) {
+    modal.classList.remove("show");
+    document.body.style.overflow = ""; // Restore scroll
+  }
+
   modalLinks.forEach(link => {
     link.addEventListener("click", e => {
       e.preventDefault();
       const modal = document.querySelector(link.getAttribute("href"));
-      if (modal) modal.style.display = "block";
+      if (modal) {
+        openModal(modal);
+      }
     });
   });
 
   closeButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-      btn.closest(".modal").style.display = "none";
+      const modal = btn.closest(".modal");
+      closeModal(modal);
     });
   });
 
   window.addEventListener("click", e => {
     modals.forEach(modal => {
       if (e.target === modal) {
-        modal.style.display = "none";
+        closeModal(modal);
       }
     });
   });
+
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") {
+      modals.forEach(modal => {
+        if (modal.classList.contains("show")) {
+          closeModal(modal);
+        }
+      });
+    }
+  });
 });
-// Function to handle the modal display logic
