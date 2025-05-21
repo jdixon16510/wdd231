@@ -136,6 +136,74 @@
    border-bottom: 2px solid var(--accent-color);
  }
  
+ /* Hero Carousel */
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease;
+  z-index: 1;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Controls & CTA must sit ABOVE the slides */
+.hero-carousel .cta {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 2;
+}
+
+/* Left and right arrows */
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 1rem;
+  z-index: 2;
+  pointer-events: none; /* allow click-through except on buttons */
+}
+
+.carousel-controls button {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 2rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  pointer-events: all;
+  z-index: 2;
+}
+
+.carousel-controls button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+
  /* Hero */
  .hero {
    position: relative;
@@ -145,25 +213,35 @@
    width: 100%;
    height: auto;
  }
+
+ .hero .cta {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 2;
+  }
+
  .cta {
-   position: absolute;
-   bottom: 1rem;
-   right: 1rem;
-   background-color: var(--cta-bg);
-   color: white;
-   border: none;
-   padding: 0.5rem 1rem;
-   border-radius: 4px;
-   font-weight: bold;
-   font-size: 1rem;
-   cursor: pointer;
-   text-decoration: none;
- }
- .cta:hover {
-   background-color: var(--primary-color);
-   color: #fff;
-   transform: scale(1.05);
- }
+  display: inline-block;
+  background-color: var(--cta-bg);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  z-index: 2;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+  transform: scale(1.05);
+}
+
 
  .view-toggle {
    display: flex;
