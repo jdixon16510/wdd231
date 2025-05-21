@@ -476,6 +476,31 @@
      transform: translateY(0);
    }
  }
+
+ .thank-you-page {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.confirmation-details {
+  text-align: left;
+  margin-top: 2rem;
+  background-color: var(--secondary-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.confirmation-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.confirmation-details li {
+  margin-bottom: 0.75rem;
+}
+
  
   /* Footer */
  footer {

@@ -10,4 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
      modifiedElement.textContent = "Last Updated: " + document.lastModified;
    }
  });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const timestampInput = document.getElementById("timestamp");
+  if (timestampInput) {
+    const now = new Date();
+    timestampInput.value = now.toISOString();
+  }
+});
+
  
