@@ -170,6 +170,8 @@
      text-decoration: underline;
    }
 
+   
+
   .join-page .join-form {
     margin: 0; /* override auto from small.css */
     width: 100%; /* ensure it fills grid column */

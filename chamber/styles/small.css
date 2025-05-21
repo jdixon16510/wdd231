@@ -383,14 +383,16 @@
  
  /* Form */
  .join-form {
-  max-width: 600px;
-  margin: 2rem auto;
+  width: 100%;
+  margin: 2rem 0;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
   background-color: var(--bg-color);
+  box-sizing: border-box;
 }
+
 
 .join-form label {
   display: flex;
@@ -430,6 +432,17 @@
   gap: 2rem;
 }
 
+.join-form input:required {
+  border-left: 4px solid var(--accent-color);
+  padding-right: 1rem; /* optional spacing */
+}
+
+.join-form label:has(input:required) > span::after {
+  content: " *";
+  color: red;
+  font-weight: bold;
+  margin-left: 0.25rem;
+}
 
   /* Modal */
  .modal {
@@ -532,7 +545,7 @@
     max-width: 800px;
     margin: 2rem auto;
     padding: 1rem;
-    text-align: center;
+    text-align: center;  
   }
 
   .confirmation-details {
@@ -541,6 +554,7 @@
     background-color: var(--secondary-color);
     padding: 1.5rem;
     border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   }
 
   .confirmation-details ul {
