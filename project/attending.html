@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temple Attendance</title>
+  <meta name="description" content="Record temple attendance">
+  <meta name="author" content="Joseph Dixon">
+  <link rel="stylesheet" href="styles/temples.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Raleway&display=swap" rel="stylesheet">
+  <script defer src="scripts/attendance.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.svg" sizes="16x16" />
+
+</head>
+<body>
+  <header>
+    <h1>Going to the Temple</h1>
+    <button id="menu-toggle">☰</button>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="attending.html">Attending</a></li>
+        <li><a href="temple.html">Temples</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+   <section class="attendance">
+      <h2>Temple Attendance Record</h2>
+    
+      <form id="attendanceForm">
+         <label for="personName">Your Name:</label>
+         <input type="text" id="personName" required>
+       
+         <label for="country">Country:</label>
+         <select id="country" required>
+           <option value="">Select Country</option>
+         </select>
+       
+         <label for="state">State:</label>
+         <select id="state">
+           <option value="">Select State</option>
+         </select>
+       
+         <label for="city">City:</label>
+         <select id="city">
+           <option value="">Select City</option>
+         </select>
+       
+         <label for="temple">Temple:</label>
+         <select id="temple" required>
+           <option value="">Select Temple</option>
+         </select>
+       
+         <label for="date">Date Attended:</label>
+         <input type="date" id="date" required>
+       
+         <button type="submit">Save Attendance</button>
+       </form>
+       
+       <h3>Search Attendance History</h3>
+       <form id="searchForm">
+         <label for="searchName">Enter Name:</label>
+         <select id="searchName">
+            <option value="">Select a person</option>
+          </select>
+       </form>
+       
+       <ul id="attendanceList"></ul>
+       
+    </section>
+    
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Joseph Dixon, USA</p>
+    <p>Last Modified: <span id="last-modified"></span></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Going to the Temple</title>
+<meta name="description" content="Temple attendance - temple address - temple information - temple history - Joseph Dixon - WDD131">
+<meta name="author" content="Joseph Dixon">
+<link rel="stylesheet" href="styles/temples.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Raleway&display=swap" rel="stylesheet">
+<script defer src="scripts/temples.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+<!-- Favicon -->
+  <link rel="icon" href="favicon.svg" sizes="16x16" />
+
+</head>
+<body>
+   <header>
+      <h1>Going to the Temple</h1>
+      <button id="menu-toggle">☰</button>
+      <nav id="nav-menu">
+         <ul>
+           <li><a href="index.html">Home</a></li>
+           <li><a href="attending.html">Attendance</a></li>
+           <li><a href="temple.html">Temples</a></li>
+         </ul>
+       </nav>
+       
+    </header>
+    <main>
+      <section class="hero" id="hero">
+        <img id="heroImg" loading="lazy" alt="Temple Image">
+        <div class="temple-content">
+          <div class="temple-info">
+            <h2 id="templeName"></h2>
+            <p id="templeAddress"></p>
+          </div>
+          <div class="temple-history" id="templeHistory"></div>
+        </div>
+      </section>
+    </main>
+    
+    <footer>
+      <p>&copy; <span id="year"></span> Joseph Dixon, USA</p>
+      <p>Last Modified: <span id="last-modified"></span></p>
+   </footer>
+</body>
+</html>

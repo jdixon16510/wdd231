@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temple Information</title>
+  <meta name="description" content="View temple information and history">
+  <meta name="author" content="Joseph Dixon">
+  <link rel="stylesheet" href="styles/temples.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Raleway&display=swap" rel="stylesheet">
+  <script defer src="scripts/temple.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.svg" sizes="16x16" />
+  
+</head>
+<body>
+  <header>
+    <h1>Going to the Temple</h1>
+    <button id="menu-toggle">☰</button>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="attending.html">Attending</a></li>
+        <li><a href="temple.html">Temple</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="temple-page">
+   <section class="temple-selection">
+      <h2>Select a Temple</h2>
+      <select id="templeSelect">
+        <option value="">Start by selecting a Country</option>
+      </select>
+    </section>
+    
+    <section class="temple-details">
+      <h2 id="templeName"></h2>
+      <img id="templeImg" src="images/temples/christus.webp" loading="lazy" alt="Temple Image">
+
+      <p id="templeAddress"></p>
+      <div id="templeHistory"></div>
+      <div id="templeAdditional"></div>
+    </section>
+    
+
+    <section class="quotes">
+      <h3>Inspirational Quotes</h3>
+      <blockquote>"In the temple, we find peace and purpose." - President Russell M. Nelson</blockquote>
+      <blockquote>"The temple is a beacon of the Lord's love." - President Thomas S. Monson</blockquote>
+    </section>
+
+    <section class="links">
+      <h3>Helpful Links</h3>
+      <ul>
+        <li><a href="https://temple-online-scheduling.churchofjesuschrist.org/?locale=en&noCache=1743462416941#!/landing/" target="_blank" rel="noopener">Schedule an Appointment</a></li>
+        <li><a href="https://www.familysearch.org/en/temple/ordinances-ready" target="_blank" rel="noopener">Ordinances Ready</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Joseph Dixon, USA</p>
+    <p>Last Modified: <span id="last-modified"></span></p>
+  </footer>
+</body>
+</html>
