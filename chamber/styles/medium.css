@@ -1,0 +1,89 @@
+/* styles/medium.css */
+
+/* Applies only to screens between 641px and 1024px */
+@media (min-width: 641px) and (max-width: 1024px) {
+  /* —— MAIN GRID —— */
+  main#main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "intro intro"
+      "events weather"
+      "forecast forecast"
+      "gallery gallery";
+    gap: 1.5rem;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  main#main > h1,
+  main#main > p {
+    grid-area: intro;
+  }
+
+  .info-grid {
+    display: contents; /* we'll handle events/weather/forecast in main */
+  }
+
+  .events-box {
+    grid-area: events;
+  }
+  .current-weather-box {
+    grid-area: weather;
+  }
+  .forecast-box {
+    grid-area: forecast;
+  }
+
+  /* —— DISCOVERY GALLERY —— */
+ 
+   /* ===== Medium: still 1‑column gallery, but cards turn side‑by‑side internally ===== */
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    grid-template-areas:
+      "card1"
+      "card2"
+      "card3"
+      "card4"
+      "card5"
+      "card6"
+      "card7"
+      "card8";
+  }
+
+  .gallery .card {
+    display: grid;
+    grid-template-columns: 200px 1fr;               /* image column + text column */
+    grid-template-rows: auto auto auto auto;        /* one row per area */
+    grid-template-areas:
+      "img    title"
+      "img    address"
+      "img    desc"
+      "img    button";
+    gap: 0.5rem 1rem;        /* row-gap:0.5rem, col-gap:1rem */
+    align-items: start;
+    overflow: hidden;
+  }
+
+  .gallery .card figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+
+
+  /* —— IMAGE HOVER EFFECT —— */
+  /* Only on medium+ screens; no effect on mobile */
+  .gallery section figure img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  .gallery section:hover figure img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+}
