@@ -1,23 +1,63 @@
 document.addEventListener('DOMContentLoaded', () => {
   const gallery = document.querySelector('.gallery');
 
+  // 1) Create a modal container and append to body
+  const modal = document.createElement('div');
+  modal.id = 'discover-modal';
+  modal.innerHTML = `
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h2 id="modal-title"></h2>
+      <p id="modal-desc"></p>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // Modal styling hook (you can also put these in your CSS)
+  const style = document.createElement('style');
+  style.textContent = `
+    #discover-modal { 
+      position: fixed; top:0; left:0; width:100%; height:100%; 
+      display:none; align-items:center; justify-content:center; 
+      z-index:1000; 
+    }
+    #discover-modal.active { display:flex; }
+    #discover-modal .modal-backdrop {
+      position:absolute; top:0; left:0; width:100%; height:100%;
+      background:rgba(0,0,0,0.5);
+    }
+    #discover-modal .modal-content {
+      position:relative;
+      background:#fff; padding:2rem; border-radius:8px;
+      max-width:500px; width:90%; z-index:1001;
+      box-shadow:0 2px 10px rgba(0,0,0,0.3);
+    }
+    #discover-modal .modal-close {
+      position:absolute; top:0.5rem; right:0.5rem;
+      background:none; border:none; font-size:1.5rem; cursor:pointer;
+    }
+    #discover-modal h2 { margin-top:0; }
+  `;
+  document.head.appendChild(style);
+
+  // 2) Fetch JSON and build cards (without description <p>)
   fetch('data/discover.json')
-    .then(response => {
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      return response.json();
+    .then(r => {
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      return r.json();
     })
     .then(items => {
       items.forEach(item => {
-        // <section class="card">
         const card = document.createElement('section');
-        card.classList.add('card');
+        card.className = 'card';
 
-        //   <h2>…</h2>
+        // Title
         const h2 = document.createElement('h2');
         h2.textContent = item.title;
         card.appendChild(h2);
 
-        //   <figure><img …></figure>
+        // Image
         const fig = document.createElement('figure');
         const img = document.createElement('img');
         img.src = item.image;
@@ -25,19 +65,19 @@ document.addEventListener('DOMContentLoaded', () => {
         fig.appendChild(img);
         card.appendChild(fig);
 
-        //   <address>…</address>
+        // Address
         const addr = document.createElement('address');
         addr.textContent = item.address;
         card.appendChild(addr);
 
-        //   <p>…</p>
-        const desc = document.createElement('p');
-        desc.textContent = item.description;
-        card.appendChild(desc);
-
-        //   <button>Learn More</button>
+        // Learn More button
         const btn = document.createElement('button');
         btn.textContent = 'Learn More';
+        btn.addEventListener('click', () => {
+          document.getElementById('modal-title').textContent = item.title;
+          document.getElementById('modal-desc').textContent  = item.description;
+          modal.classList.add('active');
+        });
         card.appendChild(btn);
 
         gallery.appendChild(card);
@@ -45,14 +85,13 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(err => {
       console.error('Could not load discover.json:', err);
-      gallery.textContent = 'Sorry, we\'re unable to load the discovery cards right now.';
+      gallery.textContent = 'Sorry, we couldn’t load the discovery cards right now.';
     });
-});
-// Add a click event listener to the gallery
-  gallery.addEventListener('click', (e) => {
-    if (e.target.tagName === 'BUTTON') {
-      const card = e.target.closest('.card');
-      const title = card.querySelector('h2').textContent;
-      alert(`You clicked on: ${title}`);
+
+  // 3) Close modal when clicking the “×” or backdrop
+  document.body.addEventListener('click', e => {
+    if (e.target.matches('.modal-close') || e.target.matches('.modal-backdrop')) {
+      modal.classList.remove('active');
     }
   });
+});

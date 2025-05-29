@@ -680,9 +680,15 @@
     "img"
     "title"
     "address"
-    "desc"
     "button";
-  gap: 0.5rem;           /* uniform gap between rows */
+  gap: 0.5rem;
+  
+  /* new border + padding */
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 1rem;
+  background: var(--card-bg, #fff);
+
   align-items: start;
   overflow: hidden;
 }
@@ -710,6 +716,14 @@
    margin: 0 0.5rem;
    padding: 0.5rem;
  }
+
+  .sidebar-message {
+    font-style: italic;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    background: var(--light-bg);
+    border-left: 3px solid var(--primary-color);
+  }
  
  /* Accessibility */
  .skip-link {

@@ -5,68 +5,58 @@
   /* —— MAIN GRID —— */
   main#main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* single‑column parent */
+    grid-template-columns: 1fr;
+    /* three rows: title, text, gallery */
     grid-template-rows: auto auto auto;
     grid-template-areas:
-      "intro intro"
-      "events weather"
-      "forecast forecast"
-      "gallery gallery";
+      "intro-title"
+      "intro-text"
+      "gallery";
     gap: 1.5rem;
     max-width: 1024px;
     margin: 0 auto;
     padding: 1rem;
   }
 
-  main#main > h1,
+  /* place the <h1> and <p> in their own areas */
+  main#main > h1 {
+    grid-area: intro-title;
+    margin: 0;
+  }
   main#main > p {
-    grid-area: intro;
+    grid-area: intro-text;
+    margin: 0;
   }
 
-  .info-grid {
-    display: contents; /* we'll handle events/weather/forecast in main */
+  /* force your gallery to the third row */
+  main#main > .gallery {
+    grid-area: gallery;
   }
 
-  .events-box {
-    grid-area: events;
-  }
-  .current-weather-box {
-    grid-area: weather;
-  }
-  .forecast-box {
-    grid-area: forecast;
-  }
-
-  /* —— DISCOVERY GALLERY —— */
- 
-   /* ===== Medium: still 1‑column gallery, but cards turn side‑by‑side internally ===== */
+  /* —— GALLERY: one column of cards —— */
   .gallery {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    grid-template-areas:
-      "card1"
-      "card2"
-      "card3"
-      "card4"
-      "card5"
-      "card6"
-      "card7"
-      "card8";
+    row-gap: 1.5rem;
   }
 
+  /* —— CARD INTERNALS: image left, info right —— */
   .gallery .card {
     display: grid;
-    grid-template-columns: 200px 1fr;               /* image column + text column */
-    grid-template-rows: auto auto auto auto;        /* one row per area */
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto auto auto;
     grid-template-areas:
       "img    title"
       "img    address"
-      "img    desc"
       "img    button";
-    gap: 0.5rem 1rem;        /* row-gap:0.5rem, col-gap:1rem */
-    align-items: start;
+    gap: 0.5rem 1rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 1rem;
+    background: var(--card-bg, #fff);
     overflow: hidden;
+    align-items: start;
   }
 
   .gallery .card figure img {
