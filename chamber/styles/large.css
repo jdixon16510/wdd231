@@ -1,24 +1,43 @@
 @media (min-width: 768px) {
    header {
-     flex-direction: row;
-     justify-content: space-between;
-     padding: 1rem 2rem;
-   }
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
  
-   .page-title {
-     font-size: 2.2rem;
-   }
+   .header-top {      
+      width: auto;                              
+      flex-wrap: wrap;
+      justify-content: flex-start;           
+      align-items: center;                         
+    }
+
+    /* allow the logo+title to wrap onto two lines when needed */
+    .logo-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+    /* let the title text break at spaces */
+    .page-title {
+      font-size: 2.2rem;
+      white-space: normal;                      
+      word-wrap: break-word;                    
+      flex: 1 1 auto;                         
+    }
  
    nav {
-     position: absolute;
-     top: 0;
-     right: 0;
-     background-color: var(--secondary-color);
-     border-bottom-left-radius: 6px;
-     padding: 0.5rem 1rem;
-     z-index: 10;
-     display: flex;
-   }
+    display: flex;           
+    position: static;        
+    margin-left: auto;       
+    background: transparent; 
+    padding: 0;              
+  }
  
    nav ul {
      display: flex;
