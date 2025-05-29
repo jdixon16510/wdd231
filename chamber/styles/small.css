@@ -675,20 +675,18 @@
 .gallery .card {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto auto auto;
+  grid-template-rows: auto auto auto auto auto;
   grid-template-areas:
     "img"
     "title"
     "address"
+    "desc"
     "button";
-  gap: 0.5rem;
-  
-  /* new border + padding */
+  gap: 0.25rem;  
   border: 1px solid var(--primary-color);
   border-radius: 8px;
   padding: 1rem;
   background: var(--card-bg, #fff);
-
   align-items: start;
   overflow: hidden;
 }
@@ -701,10 +699,28 @@
    grid-area: title;
    margin: 0;
 }
-.gallery .card address { grid-area: address; font-style: normal; }
-.gallery .card p       { grid-area: desc;    margin: 0; }
-.gallery .card button  { grid-area: button;  justify-self: start; }
-.gallery .card figure img { width: 100%; height: auto; display: block; }
+.gallery .card address {
+  grid-area: address;
+  margin: 0;               /* pull it up to title */
+  font-style: normal;
+}
+
+.gallery .card p {
+  grid-area: desc;
+  margin: 0;               /* no extra space */
+}
+
+.gallery .card button {
+  grid-area: button;
+  margin-top: 0.5rem;      /* small gap before button */
+  justify-self: start;
+}
+
+.gallery .card figure img {
+  width: 100%; 
+  height: auto; 
+  display: block; 
+}
 
 
 /* ===== Discover Modal (now applied site‑wide) ===== */
@@ -731,7 +747,7 @@
   background: #fff;
   padding: 2rem;
   border-radius: 8px;
-  max-width: 500px;
+  max-width: 350px;
   width: 90%;
   z-index: 1001;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);

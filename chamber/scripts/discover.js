@@ -44,12 +44,17 @@ document.addEventListener('DOMContentLoaded', () => {
         addr.textContent = item.address;
         card.appendChild(addr);
 
+        // Description (now on the card)
+        const descEl = document.createElement('p');
+        descEl.textContent = item.description;
+        card.appendChild(descEl);
+
         // Learn More button
         const btn = document.createElement('button');
         btn.textContent = 'Learn More';
         btn.addEventListener('click', () => {
           document.getElementById('modal-title').textContent = item.title;
-          document.getElementById('modal-desc').textContent  = item.description;
+          document.getElementById('modal-desc').textContent  = item.moreInfo;
           modal.classList.add('active');
         });
         card.appendChild(btn);

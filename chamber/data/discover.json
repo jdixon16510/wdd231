@@ -3,48 +3,56 @@
     "title": "Benson Sculpture Garden",
     "image": "images/discover/benson-garden.webp",
     "address": "100 N Link Lane, Loveland, CO 80537",
-    "description": "An outdoor sculpture garden featuring over 170 unique pieces set along Lake Loveland."
+    "description": "An outdoor sculpture garden featuring over 170 unique pieces set along Lake Loveland.",
+    "moreInfo": "Open daily from dawn to dusk. Free admission. Guided tours available on weekends at 10 AM and 2 PM."
   },
   {
     "title": "Devil’s Backbone Open Space",
     "image": "images/discover/devils-backbone.webp",
     "address": "5512 Rist Canyon Rd, Loveland, CO 80538",
-    "description": "Scenic hiking trails and striking rock formations with panoramic mountain views."
+    "description": "Scenic hiking trails and striking rock formations with panoramic mountain views.",
+    "moreInfo": "Trails range from easy (0.5 mi) to strenuous (6 mi). Dogs on leash welcome. Watch for rattlesnakes in summer."
   },
   {
     "title": "Boyd Lake State Park",
     "image": "images/discover/boyd-lake.webp",
     "address": "4201 County Rd 23, Loveland, CO 80538",
-    "description": "Boating, fishing, and camping on a beautiful reservoir just north of town."
+    "description": "Boating, fishing, and camping on a beautiful reservoir just north of town.",
+    "moreInfo": "Boat ramps open April–October. Campsites must be reserved in advance at cpw.state.co.us."
   },
   {
     "title": "Loveland Museum / Gallery",
     "image": "images/discover/loveland-museum.webp",
     "address": "503 N Lincoln Ave, Loveland, CO 80537",
-    "description": "Art exhibits and local history displays in a beautifully restored Carnegie library."
+    "description": "Art exhibits and local history displays in a beautifully restored Carnegie library.",
+    "moreInfo": "Hours: Tue–Sat 10 AM–5 PM. Admission $5 adults, $3 seniors/students, free for kids under 12."
   },
   {
     "title": "Southridge Sports Complex",
     "image": "images/discover/southridge-complex.webp",
     "address": "3550 Wilson Ave, Loveland, CO 80538",
-    "description": "Multi-sport fields, skate park, roller rink, and an 18-hole disc golf course."
+    "description": "Multi-sport fields, skate park, roller rink, and an 18-hole disc golf course.",
+    "moreInfo": "Disc golf course is free. Skatepark open dawn–dusk. Roller rink hosts public skate Fri & Sat nights."
   },
   {
     "title": "Lake Loveland",
     "image": "images/discover/lake-loveland.webp",
     "address": "200 Lake Ave, Loveland, CO 80537",
-    "description": "Paved trails, fishing docks, and picnic spots right in the heart of town."
+    "description": "Paved trails, fishing docks, and picnic spots right in the heart of town.",
+    "moreInfo": "Trail is 1.5 mi around the lake. Fishing licenses required; dock rentals available in summer."
   },
   {
     "title": "Chapman Hill Nature Area",
     "image": "images/discover/chapman-hill-nature-area.webp",
     "address": "East 11th St & Cleveland Ave, Loveland, CO 80537",
-    "description": "A quiet urban sanctuary with wetlands, wildlife viewing, and interpretive trails."
+    "description": "A quiet urban sanctuary with wetlands, wildlife viewing, and interpretive trails.",
+    "moreInfo": "Best birdwatching at dawn. Please stay on boardwalk paths to protect the wetland habitat."
   },
   {
     "title": "Fire & Ice Festival",
     "image": "images/discover/fire-ice-festival.webp",
     "address": "Downtown Loveland, CO",
-    "description": "Annual January event featuring ice sculptures, fire pits, and live music downtown."
+    "description": "Annual January event featuring ice sculptures, fire pits, and live music downtown.",
+    "moreInfo": "Held every Saturday in mid‑January. Ice carving demos start at 11 AM; fireworks at 6 PM."
   }
 ]
