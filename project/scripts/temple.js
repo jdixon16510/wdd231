@@ -1,15 +1,4 @@
-// Footer year and last modified date
-document.getElementById("year").textContent = new Date().getFullYear();
-document.getElementById("last-modified").textContent = document.lastModified;
-
-// Hamburger menu toggle
-const menuToggle = document.getElementById("menu-toggle");
-const navMenu = document.getElementById("nav-menu");
-
-menuToggle.addEventListener("click", () => {
-  navMenu.classList.toggle("active");
-  menuToggle.textContent = navMenu.classList.contains("active") ? "✖" : "☰";
-});
+// temple.js
 
 const templeSelect = document.getElementById("templeSelect");
 
@@ -148,16 +137,16 @@ function displayTemple(name) {
 
   // Extra data example
   const formattedSize = temple.Size
-  ? `${Number(temple.Size).toLocaleString()} SqFt`
-  : "N/A";
+    ? `${Number(temple.Size).toLocaleString()} SqFt`
+    : "N/A";
 
-document.getElementById("templeAdditional").innerHTML = `
-  <br>
-  <strong>Size:</strong> ${formattedSize}<br>
-  <strong>Ordinance Rooms:</strong> ${temple.Ordinance || "N/A"}
-  <strong>Sealing Rooms:</strong> ${temple.Sealing || "N/A"}
-  <strong>Baptistry Rooms:</strong> ${temple.Baptistry || "N/A"}
-`;
+  document.getElementById("templeAdditional").innerHTML = `
+    <br>
+    <strong>Size:</strong> ${formattedSize}<br>
+    <strong>Ordinance Rooms:</strong> ${temple.Ordinance || "N/A"}
+    <strong>Sealing Rooms:</strong> ${temple.Sealing || "N/A"}
+    <strong>Baptistry Rooms:</strong> ${temple.Baptistry || "N/A"}
+  `;
 }
 
 // Date formatter
@@ -179,12 +168,3 @@ function formatDate(dateInput) {
     day: "numeric"
   });
 }
-
-
-document.querySelectorAll("#nav-menu a").forEach(link => {
-   link.addEventListener("click", () => {
-     navMenu.classList.remove("active");
-     menuToggle.textContent = "☰";
-   });
- });
- 

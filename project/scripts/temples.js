@@ -1,6 +1,3 @@
-// Footer year and last modified date
-document.getElementById("year").textContent = new Date().getFullYear();
-document.getElementById("last-modified").textContent = document.lastModified;
 
 let templeData = [];
 
@@ -21,22 +18,6 @@ function fetchTempleData() {
     .catch(err => console.error("Error loading Excel file:", err));
 }
 
-// Hamburger toggle
-const menuToggle = document.getElementById("menu-toggle");
-const navMenu = document.getElementById("nav-menu");
-
-menuToggle.addEventListener("click", () => {
-  navMenu.classList.toggle("active");
-  menuToggle.textContent = navMenu.classList.contains("active") ? "✖" : "☰";
-});
-
-// Auto-close menu when clicking a link
-document.addEventListener("click", (e) => {
-  if (e.target.closest("#nav-menu a")) {
-    navMenu.classList.remove("active");
-    menuToggle.textContent = "☰";
-  }
-});
 
 // Format date
 function formatDate(dateInput) {

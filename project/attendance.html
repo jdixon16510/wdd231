@@ -22,12 +22,12 @@
   <link rel="stylesheet" href="styles/small.css" />
   <link rel="stylesheet" href="styles/medium.css" />
   <link rel="stylesheet" href="styles/large.css" />
-
+  
 <!-- Scripts -->
-  <script defer src="scripts/navigation.js"></script>
-  <script defer src="scripts/date.js"></script>
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/date.js" defer></script>
   <script defer src="scripts/temple.js"></script>
-  <!-- <script defer src="scripts/temples-combined.js"></script> -->
+  <script defer src="scripts/attendance.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
 
@@ -56,8 +56,8 @@
         <nav aria-label="Main navigation">
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="attendance.html">Attendance</a></li>
-            <li><a href="temple.html" class="active">Temples</a></li>
+            <li><a href="attendance.html" class="active">Attendance</a></li>
+            <li><a href="temple.html">Temples</a></li>
           </ul>
         </nav>
         <button id="menu-toggle" aria-label="Toggle Menu">
@@ -69,37 +69,52 @@
     </div>
   </header>
 
-  <main class="temple-page">
-   <section class="temple-selection">
-      <h2>Select a Temple</h2>
-      <select id="templeSelect">
-        <option value="">Start by selecting a Country</option>
-      </select>
+  <main>
+   <section class="attendance">
+      <h2>Temple Attendance Record</h2>
+    
+      <form id="attendanceForm">
+         <label for="personName">Your Name:</label>
+         <input type="text" id="personName" required>
+       
+         <label for="country">Country:</label>
+         <select id="country" required>
+           <option value="">Select Country</option>
+         </select>
+       
+         <label for="state">State:</label>
+         <select id="state">
+           <option value="">Select State</option>
+         </select>
+       
+         <label for="city">City:</label>
+         <select id="city">
+           <option value="">Select City</option>
+         </select>
+       
+         <label for="temple">Temple:</label>
+         <select id="temple" required>
+           <option value="">Select Temple</option>
+         </select>
+       
+         <label for="date">Date Attended:</label>
+         <input type="date" id="date" required>
+       
+         <button type="submit">Save Attendance</button>
+       </form>
+       
+       <h3>Search Attendance History</h3>
+       <form id="searchForm">
+         <label for="searchName">Enter Name:</label>
+         <select id="searchName">
+            <option value="">Select a person</option>
+          </select>
+       </form>
+       
+       <ul id="attendanceList"></ul>
+       
     </section>
     
-    <section class="temple-details">
-      <h2 id="templeName"></h2>
-      <img id="templeImg" src="images/temples/christus.webp" loading="lazy" alt="Temple Image">
-
-      <p id="templeAddress"></p>
-      <div id="templeHistory"></div>
-      <div id="templeAdditional"></div>
-    </section>
-    
-
-    <section class="quotes">
-      <h3>Inspirational Quotes</h3>
-      <blockquote>"In the temple, we find peace and purpose." - President Russell M. Nelson</blockquote>
-      <blockquote>"The temple is a beacon of the Lord's love." - President Thomas S. Monson</blockquote>
-    </section>
-
-    <section class="links">
-      <h3>Helpful Links</h3>
-      <ul>
-        <li><a href="https://temple-online-scheduling.churchofjesuschrist.org/?locale=en&noCache=1743462416941#!/landing/" target="_blank" rel="noopener">Schedule an Appointment</a></li>
-        <li><a href="https://www.familysearch.org/en/temple/ordinances-ready" target="_blank" rel="noopener">Ordinances Ready</a></li>
-      </ul>
-    </section>
   </main>
 
   <footer>

@@ -1,15 +1,3 @@
-// Footer year and last modified date
-document.getElementById("year").textContent = new Date().getFullYear();
-document.getElementById("last-modified").textContent = document.lastModified;
-
-// Hamburger menu toggle
-const menuToggle = document.getElementById("menu-toggle");
-const navMenu = document.getElementById("nav-menu");
-
-menuToggle.addEventListener("click", () => {
-  navMenu.classList.toggle("active");
-  menuToggle.textContent = navMenu.classList.contains("active") ? "✖" : "☰";
-});
 
 const attendanceForm = document.getElementById("attendanceForm");
 const attendanceList = document.getElementById("attendanceList");

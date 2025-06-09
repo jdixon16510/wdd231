@@ -1,35 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Going to the Temple</title>
-<meta name="description" content="Temple attendance - temple address - temple information - temple history - Joseph Dixon - WDD131">
-<meta name="author" content="Joseph Dixon">
-<link rel="stylesheet" href="styles/temples.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Raleway&display=swap" rel="stylesheet">
-<script defer src="scripts/temples.js"></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Going to the Temple</title>
+  <meta name="description" content="Temple information page. This page provides details about the temple, including its name, address, and history.">
+  <meta name="keywords" content="Temple, Attendance, Address, Information, History, Joseph Dixon, WDD131">
+  <meta name="author" content="Joseph Dixon">
+
+<!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Preload font stylesheet -->
+   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Raleway:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+   <noscript>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Raleway:wght@400;700&display=swap">
+   </noscript>
+
+<!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/normalize.css" />
+  <link rel="stylesheet" href="styles/small.css" />
+  <link rel="stylesheet" href="styles/medium.css" />
+  <link rel="stylesheet" href="styles/large.css" />
+
+<!-- Scripts -->
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/date.js" defer></script>
+  <script defer src="scripts/temples.js"></script>
+  <!-- <script defer src="scripts/temples-combined.js"></script> -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
 
 <!-- Favicon -->
   <link rel="icon" href="favicon.svg" sizes="16x16" />
 
+<!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Going to the Temple" />
+  <meta property="og:description" content="Temple information page. This page provides details about the temple, including its name, address, and history." />
+  <meta property="og:image" content="https://jdixon16510.github.io/wdd231/project/images/salt-lake-temple.svg" />
+  <meta property="og:url" content="https://jdixon16510.github.io/wdd231/project/index.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Going to the Temple" />
+  <meta property="og:locale" content="en_US" />
+
 </head>
+
 <body>
-   <header>
-      <h1>Going to the Temple</h1>
-      <button id="menu-toggle">☰</button>
-      <nav id="nav-menu">
-         <ul>
-           <li><a href="index.html">Home</a></li>
-           <li><a href="attending.html">Attendance</a></li>
-           <li><a href="temple.html">Temples</a></li>
-         </ul>
-       </nav>
-       
-    </header>
+  <header>
+    <div class="header-wrapper">
+      <div class="header-top">
+        <div class="logo-title">      
+          <img src="images/salt-lake-temple.svg" alt="Temple logo" class="logo" />
+          <span class="page-title">Going to the Temple</span>
+        </div>
+        <nav aria-label="Main navigation">
+          <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="attendance.html">Attendance</a></li>
+            <li><a href="temple.html">Temples</a></li>
+          </ul>
+        </nav>
+        <button id="menu-toggle" aria-label="Toggle Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
     <main>
       <section class="hero" id="hero">
         <img id="heroImg" loading="lazy" alt="Temple Image">
@@ -44,8 +83,9 @@
     </main>
     
     <footer>
-      <p>&copy; <span id="year"></span> Joseph Dixon, USA</p>
-      <p>Last Modified: <span id="last-modified"></span></p>
+      <p>
+        &copy; <span id="year"></span> Joseph Dixon, USA<br>
+      <span id="lastModified"></span></p>
    </footer>
 </body>
 </html>
