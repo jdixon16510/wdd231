@@ -62,13 +62,55 @@
     margin: 10px 0;
     max-width: 90%;
     text-align: center;
-  }  
+  } 
+  
+  /* keep the table centered */
+  .records-filter table {
+    width: 80%;
+    margin: 2.5rem auto;
+  }
+ 
 }
 
 @media (min-width: 769px) {
   nav a:hover {
     background: var(--color-accent);
     color: var(--color-primary);
+  }
+
+  .temple-details {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 600px;    
+    margin: 2.5rem auto;
+    gap: 1rem;                 /* space between image & content */
+  }
+  .temple-details img {
+    margin-bottom: 0;
+    margin-right: 1rem;
+  }
+  .temple-details .details-content {
+    flex: 1;
+  }
+
+  .cards-container {
+    max-width: 80%;
+  }
+  .search-container input {
+    max-width: 500px;
+  }
+  .temple-card {
+    flex-direction: row;
+  }
+  .temple-card img {
+    width: 300px;
+    height: auto;
+    flex-shrink: 0;
+    margin-right: 1rem;
+  }
+  .temple-card .card-content {
+    flex: 1;
   }
 }
 

@@ -80,4 +80,40 @@
     max-width: 400px;
     text-align: left;
   }
+
+  .records-filter table {
+    width: 60%;
+    margin: 3rem auto;
+  }
+  .temple-details {
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 900px;
+  }
+  .temple-details img {    
+    margin-right: 1rem;
+  }
+
+  .temple-details {
+    display: flex ;
+    flex-direction: row ;
+    align-items: flex-start;
+    max-width: 600px;   
+    gap: 1.5rem;
+  }
+  .temple-details img {
+    width: 225px;              /* or bump up if you want even larger */
+    margin-bottom: 0;
+    margin-right: 1rem;
+  }
+  .temple-details .details-content {
+    flex: 1;
+  }
+
+   .cards-container {
+    max-width: 800px;
+  }
+  .search-container input {
+    max-width: 400px;
+  }
 }

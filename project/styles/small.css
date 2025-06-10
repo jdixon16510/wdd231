@@ -156,13 +156,177 @@ nav a.active, nav a:hover {
   z-index: -1;
 }
 
+.cta-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(270deg, #00c6ff, #0072ff, #00c6ff);
+  background-size: 600% 100%;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  z-index: 10;
+  transition: transform 0.3s ease;
+  animation: move-gradient 3s ease infinite;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+}
+
+@keyframes move-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ——— Modal Form Two-Column Layout ——— */
+#visitForm {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 1rem;
+  row-gap: 0.75rem;
+  align-items: center;
+}
+
+#visitForm label {
+  justify-self: end;       /* right-align label text */
+  padding-right: 0.5rem;
+}
+
+#visitForm input,
+#visitForm select {
+  justify-self: start;     /* left-align inputs */
+  width: 100%;
+  max-width: 240px;        /* or whatever fits your modal */
+}
+
+#visitForm button[type="submit"] {
+  grid-column: 2;          /* place the button under the inputs */
+  justify-self: start;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;  
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#visitForm button:hover {
+  background-color: var(--color-accent);
+}
+
+/* ——— Acknowledgment Dialog Styling ——— */
+dialog#ackDialog {
+  width: 320px;
+  padding: 1.5rem;
+  border: none;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  font-family: sans-serif;
+}
+
+/* Header */
+dialog#ackDialog h2 {
+  font-size: 1.25rem;
+  margin: 0 0 0.75rem;
+  color: var(--primary-color);
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 0.5rem;
+}
+
+/* Content box */
+#ackContent {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  white-space: pre-wrap;
+  line-height: 1.4;
+  font-family: var(font-body);
+  color: var(--color-text);
+  font-size: 0.95rem;
+}
+
+/* OK button */
+#ackOk {
+  display: block;
+  margin: 0 auto;
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+#ackOk:hover {
+  background-color: var(--color-accent);
+}
+
+
+
 .temple-info {
   background: rgba(255, 255, 255, 0.8);
   padding: 15px;
   position: absolute;
   top: 20px;
   left: 20px;
-  max-width: 300px;
+  max-width: 200px;
   border-radius: 8px;
   font-family: var(--font-heading);
   color: var(--color-text);
@@ -194,6 +358,74 @@ nav a.active, nav a:hover {
   font-family: var(--font-heading);
 }
 
+
+/* ——— Centered, alternating-row table ——— */
+.records-filter table {
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+  border-collapse: collapse;
+}
+.records-filter th,
+.records-filter td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+}
+.records-filter tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* center the title */
+.records-filter h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* center the form under the title */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.filter-container form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+
+/* ——— Details “card” ——— */
+.temple-details {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: 2rem auto;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1rem;
+}
+
+.temple-details img {
+  width: 225px;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+.temple-details .details-content {
+  width: 100%;
+}
+
+
+.temple-details h3 {
+  margin-top: 0;
+  color: var(--color-primary);
+}
+
 /* ---- REST OF YOUR PAGE STYLES ---- */
 footer {
   text-align: center;
@@ -202,40 +434,7 @@ footer {
   padding: 10px;
 }
 
-.attendance {
-  padding: 20px;
-  max-width: 600px;
-  margin: auto;
-}
-.attendance form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-.attendance input,
-.attendance button,
-.attendance select {
-  padding: 8px;
-  font-size: 1rem;
-}
-.attendance select {
-  min-height: 44px;
-  background: #fff;
-  border: 1px solid var(--color-border);
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-#attendanceList {
-  list-style: none;
-  padding: 0;
-}
-#attendanceList li {
-  background: #f0f0f0;
-  margin: 5px 0;
-  padding: 10px;
-  border-radius: 5px;
-}
+
 
 /* Temple Page */
 .temple-page {
@@ -251,18 +450,7 @@ footer {
   margin: 10px 0;
   width: 300px;
 }
-.temple-details {
-  text-align: center;
-  margin-top: 20px;
-  max-width: 600px;
-}
-.temple-details img {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  margin-top: 10px;
-  display: block;
-}
+
 .links,
 .quotes {
   margin-top: 30px;
@@ -273,3 +461,78 @@ footer {
   display: inline-block;
   margin: 8px 0;
 }
+
+/* ——— Search & Alphabet ——— */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+.search-container input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.alphabet-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.alphabet-filter button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--color-primary);
+}
+.alphabet-filter button.active {
+  text-decoration: underline;
+}
+
+/* ——— Cards container ——— */
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+/* ——— Temple card ——— */
+.temple-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.temple-card img {
+  width: 100%;
+  height: auto;
+}
+.temple-card .card-content {
+  padding: 1rem;
+}
+.temple-card h3 {
+  margin: 0 0 0.5rem;
+}
+.temple-card p em {
+  color: var(--color-text-muted);
+}
+
+.temple-card .card-content p:first-of-type {
+  font-weight: bold;
+}
+
+.temples-page .temples-title {
+  text-align: center;
+  margin: 2rem 0 1rem;
+}
+

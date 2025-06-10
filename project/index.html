@@ -24,11 +24,12 @@
   <link rel="stylesheet" href="styles/large.css" />
 
 <!-- Scripts -->
-  <script src="scripts/navigation.js" defer></script>
-  <script src="scripts/date.js" defer></script>
-  <script defer src="scripts/temples.js"></script>
-  <!-- <script defer src="scripts/temples-combined.js"></script> -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script type="module" src="scripts/temple-utils.mjs"></script> 
+  <script type="module" src="scripts/temples.mjs"></script>
+  <script defer src="scripts/navigation.js"></script>
+  <script defer src="scripts/date.js"></script>  
+  
 
 
 <!-- Favicon -->
@@ -57,7 +58,7 @@
           <ul>
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="attendance.html">Attendance</a></li>
-            <li><a href="temple.html">Temples</a></li>
+            <li><a href="temples.html">Temples</a></li>
           </ul>
         </nav>
         <button id="menu-toggle" aria-label="Toggle Menu">
@@ -69,23 +70,65 @@
     </div>
   </header>
 
-    <main>
-      <section class="hero" id="hero">
-        <img id="heroImg" loading="lazy" alt="Temple Image">
-        <div class="temple-content">
-          <div class="temple-info">
-            <h2 id="templeName"></h2>
-            <p id="templeAddress"></p>
-          </div>
-          <div class="temple-history" id="templeHistory"></div>
+  <main>
+    <section class="hero" id="hero">
+      <img id="heroImg" loading="lazy" alt="Temple Image">
+      <button id="openVisitModal" class="cta-button">Temple Visit</button>
+      <div class="temple-content">
+        <div class="temple-info">
+          <h2 id="templeName"></h2>
+          <p id="templeAddress"></p>
         </div>
-      </section>
-    </main>
+        <div class="temple-history" id="templeHistory"></div>
+      </div>
+    </section>
+
+    <!-- Modal Dialog -->
+    <div id="visitModal" class="modal hidden">
+      <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <h2>Record a Temple Visit</h2>
+        <form id="visitForm">
+          <label for="visitorName">Your Name:</label>
+          <input type="text" id="visitorName" name="visitorName" required>
+
+          <label for="countrySelect">Country:</label>
+          <select id="countrySelect" required></select>
+
+          <label for="stateSelect">State:</label>
+          <select id="stateSelect"></select>
+
+          <label for="citySelect">City:</label>
+          <select id="citySelect" required></select>
+
+          <label for="templeSelect">Temple:</label>
+          <select id="templeSelect" required></select>
+
+          <label for="visitType">Visit Type:</label>
+          <select id="visitType" name="visitType" required>
+            <option value="Visit">Visit</option>
+            <option value="Attendance">Attendance</option>
+          </select>
+
+          <label for="visitDate">Date:</label>
+          <input type="date" id="visitDate" name="visitDate" required>
+
+          <button type="submit">Save Visit</button>
+        </form>
+        
+      </div>
+    </div>
+    <dialog id="ackDialog">
+      <h2>Your Visit Has Been Saved</h2>
+      <div id="ackContent"></div>
+      <button id="ackOk">Thank You</button>
+    </dialog>
+  </main>
     
-    <footer>
-      <p>
-        &copy; <span id="year"></span> Joseph Dixon, USA<br>
-      <span id="lastModified"></span></p>
-   </footer>
+  <footer>
+    <p>
+      &copy; <span id="year"></span> Joseph Dixon, USA<br>
+    <span id="lastModified"></span></p>
+  </footer>
 </body>
 </html>
