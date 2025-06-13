@@ -48,7 +48,7 @@
       <div class="header-top">
         <div class="logo-title">      
           <img src="images/salt-lake-temple.svg" alt="Temple logo" class="logo" />
-          <span class="page-title font-heading">Going to the Temple</span>
+          <span class="page-title">Going to the Temple</span>
         </div>
         <nav aria-label="Main navigation">
           <ul>
@@ -67,13 +67,13 @@
   </header>
 
   <main>
-    <h1 class="visually-hidden" class="visually-hidden">Going to the Temple</h1>
+    <h1 class="visually-hidden">Going to the Temple</h1>
     <section class="hero" id="hero">
       <img id="heroImg" loading="lazy" alt="Temple Image" src="images/placeholder" />
-      <button id="openVisitModal" class="cta-button btn">Temple Visit</button>
+      <button id="openVisitModal" class="cta-button">Temple Visit</button>
       <div class="temple-content">
         <div class="temple-info">
-          <h2 id="templeName" class="font-heading font-bold"></h2>
+          <h2 id="templeName"></h2>
           <p id="templeAddress"></p>
         </div>
         <div class="temple-history" id="templeHistory"></div>
@@ -82,9 +82,9 @@
 
     <!-- Modal Dialog -->
     <div id="visitModal" class="modal hidden">
-      <div class="modal-content card">
+      <div class="modal-content">
         <span id="closeModal" class="close">&times;</span>
-        <h2 class="font-heading font-bold">Record a Temple Visit</h2>
+        <h2>Record a Temple Visit</h2>
         <form id="visitForm">
           <label for="visitorName">Your Name:</label>
           <input type="text" id="visitorName" name="visitorName" required>
@@ -129,7 +129,7 @@
       </div>
     </div>
     <dialog id="ackDialog">
-      <h2 class="font-heading font-bold">Your Visit Has Been Saved</h2>
+      <h2>Your Visit Has Been Saved</h2>
       <div id="ackContent"></div>
       <button id="ackOk">Thank You</button>
     </dialog>
