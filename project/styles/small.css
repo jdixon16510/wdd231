@@ -295,7 +295,7 @@ dialog#ackDialog h2 {
   margin-bottom: 1rem;
   white-space: pre-wrap;
   line-height: 1.4;
-  font-family: var(font-body);
+  font-family: var(--font-body);
   color: var(--color-text);
   font-size: 0.95rem;
 }
