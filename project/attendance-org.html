@@ -4,9 +4,9 @@
   <!-- ————— copy everything from your index.html <head> … </head> ————— -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Temples</title>
-  <meta name="description" content="Browse all temples">
-  <meta name="keywords" content="Temple, Temples, Directory, Joseph Dixon, WDD131">
+  <title>Attendance Records</title>
+  <meta name="description" content="View your temple visit and attendance records">
+  <meta name="keywords" content="Temple, Attendance, Records, Joseph Dixon, WDD131">
   <meta name="author" content="Joseph Dixon">
 
   <!-- Fonts -->
@@ -20,64 +20,73 @@
   <link rel="stylesheet" href="styles/medium.css" />
   <link rel="stylesheet" href="styles/large.css" />
 
-  <!-- Temple‐utils + new cards script -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-  <script type="module" src="scripts/temple-utils.mjs"></script>
-  <script type="module" src="scripts/temples.mjs"></script>
+  <!-- Scripts -->
+   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+   <script type="module" src="scripts/temple-utils.mjs"></script>
+   <script type="module" src="scripts/attendance.mjs"></script>
    <script defer src="scripts/navigation.js"></script>
    <script defer src="scripts/date.js"></script>
-  <script type="module" src="scripts/temple-cards.mjs"></script>
 
-  <!-- Favicon -->
+   <!-- Favicon -->
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml" sizes="16x16" />
 
-<!-- Open Graph / Facebook -->
-  <meta property="og:title" content="Temples" />
-  <meta property="og:description" content="Browse all temples" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Attendance Records" />
+  <meta property="og:description" content="View your temple visit and attendance records" />
   <meta property="og:image" content="https://jdixon16510.github.io/wdd231/project/images/salt-lake-temple.svg" />
-  <meta property="og:url" content="https://jdixon16510.github.io/wdd231/project/temples.html" />
+  <meta property="og:url" content="https://jdixon16510.github.io/wdd231/project/attendance.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Going to the Temple" />
   <meta property="og:locale" content="en_US" />
+
 </head>
 <body>
-  <!-- ————— copy your index.html header ————— -->
+  
   <header>
     <div class="header-wrapper">
       <div class="header-top">
         <div class="logo-title">
           <img src="images/salt-lake-temple.svg" alt="Temple logo" class="logo" />
-          <span class="page-title">Going to the Temple</span>
+          <span class="page-title font-heading">Going to the Temple</span>
         </div>
         <nav aria-label="Main navigation">
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="attendance.html">Attendance</a></li>
-            <li><a href="temples.html" class="active">Temples</a></li>
+            <li><a href="attendance.html" class="active">Attendance</a></li>
+            <li><a href="temples.html">Temples</a></li>
           </ul>
         </nav>
         <button id="menu-toggle" aria-label="Toggle Menu">
           <span class="bar"></span><span class="bar"></span><span class="bar"></span>
         </button>
       </div>
+      
     </div>
   </header>
 
-  <main class="temples-page">    
-   <h1 class="visually-hidden">Temples</h1>
-
-    <!-- Search -->
-    <div class="search-container">
-      <input type="search" id="searchInput" placeholder="Search by Name" />
-    </div>
-
-    <!-- Alphabet filter -->
-    <div id="alphabetFilter" class="alphabet-filter"></div>
-
-    <!-- Cards go here -->
-    <div id="cardsContainer" class="cards-container"></div>
-
-    
+  <main>
+    <h1 class="visually-hidden">Attendance Records</h1>
+    <section class="records-filter">
+      <h2 class="font-heading font-bold">View Temple Visit Records</h2>
+      <div class="filter-container">
+         <form id="filterForm">
+            <label for="filterName">Your Name:</label>
+            <select id="filterName" name="filterName">
+               <option value="" disabled selected>Select your name</option>
+            </select>
+            <button type="submit">Show Records</button>
+         </form>
+      </div>
+      <div class="records-layout">
+        <div id="recordsContainer">
+          <!-- Table of visits will be injected here -->
+        </div>
+        <div id="templeDetails" class="temple-details hidden card">
+          <img id="detailImage" src="images/placeholder" alt="" />
+          <div class="details-content"></div>         
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- ————— copy your index.html footer ————— -->
@@ -86,6 +95,6 @@
       &copy; <span id="year"></span> Joseph Dixon, USA<br>
       <span id="lastModified"></span>
     </p>
-  </footer>
+  </footer>  
 </body>
 </html>
