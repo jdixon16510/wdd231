@@ -72,7 +72,7 @@
 
   <main>
     <section class="hero" id="hero">
-      <img id="heroImg" loading="lazy" alt="Temple Image">
+      <img id="heroImg" loading="lazy" alt="Temple Image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==">
       <button id="openVisitModal" class="cta-button">Temple Visit</button>
       <div class="temple-content">
         <div class="temple-info">
@@ -93,19 +93,32 @@
           <input type="text" id="visitorName" name="visitorName" required>
 
           <label for="countrySelect">Country:</label>
-          <select id="countrySelect" required></select>
+          <select id="countrySelect" required>
+            <option value="" disabled selected>Select your country</option>
+            <!-- Country options will be populated here -->
+          </select>
 
           <label for="stateSelect">State:</label>
-          <select id="stateSelect"></select>
+          <select id="stateSelect">
+            <option value="" disabled selected>Select your state</option>
+            <!-- State options will be populated here based on country selection -->
+          </select>
 
           <label for="citySelect">City:</label>
-          <select id="citySelect" required></select>
+          <select id="citySelect" required>
+            <option value="" disabled selected>Select your city</option>
+            <!-- City options will be populated here based on state selection -->
+          </select>
 
           <label for="templeSelect">Temple:</label>
-          <select id="templeSelect" required></select>
+          <select id="templeSelect" required>
+            <option value="" disabled selected>Select a temple</option>
+            <!-- Temple options will be populated here based on city selection -->
+          </select>
 
           <label for="visitType">Visit Type:</label>
           <select id="visitType" name="visitType" required>
+            <option value="" disabled selected>Select visit type</option>
             <option value="Visit">Visit</option>
             <option value="Attendance">Attendance</option>
           </select>

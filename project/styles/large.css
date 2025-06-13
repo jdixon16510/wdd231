@@ -100,6 +100,7 @@
     align-items: flex-start;
     max-width: 600px;   
     gap: 1.5rem;
+    margin: 0;
   }
   .temple-details img {
     width: 225px;              /* or bump up if you want even larger */
@@ -116,4 +117,17 @@
   .search-container input {
     max-width: 400px;
   }
+
+  .records-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#recordsContainer {
+  flex: 2;
+}
 }
